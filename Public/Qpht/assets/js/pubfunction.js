@@ -361,7 +361,7 @@ var pubFun=(function($){
 	pubaction();
 	outsystem();
 	initLoading();
-	getexcel();
+	// getexcel();
 	return {
 		messagewarn:messagewarn,
 		fynum:fynum,
