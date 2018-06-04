@@ -1,0 +1,97 @@
+<extend name="Public/base"/>
+<block name="contents">
+    <div id="page-inner">                
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            收入情况
+                            <form class="form-inline">
+							  <div class="form-group">
+							    <label for="exampleInputName2">项目名称:</label>
+							    <select class="form-control" id="gametype">
+							    	<option value="0">全部</option>
+	                                <volist name='gameinfo' id='vo'>
+									      <option value="{$vo.id}">{$vo.gamename}</option>
+									</volist>
+								</select>
+							  </div>
+							  <div class="form-group">
+							    <label for="exampleInputEmail2">指定日期</label>
+							    <input type="text" class="form-control" id="begin_time">——
+							    <input type="text" class="form-control" id="end_time">
+							  </div>
+							  <button type="button" class="btn btn-default" id="seachbtn">查询</button>
+							  <button type="button" class="btn btn-default" id="seachbtnevery">按天查询</button>
+							</form>
+                        </div>
+                        <div class="panel-body">
+                            <!-- <ul class="nav nav-tabs">
+                                <li class="active"><a href="#home" data-toggle="tab">血流成河</a>
+                                </li>
+                                <li class=""><a href="#profile" data-toggle="tab">斗地主</a>
+                                </li>
+                            </ul> -->
+
+                            <div class="tab-content">
+                            	<div class="tab-pane fade active in" id="home">
+                            		<input type="hidden" name="" value="{$gameid}" id="gameid">
+                            		<input type="hidden" value="asc" data-begin="{$yday}" data-end="{$tday}" id="timespan">
+		                                    <div class="table-responsive">
+				                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+				                                    <thead>
+				                                        <tr>
+				                                            <th>项目名称</th>
+				                                            <th>金币场服务费</th>
+				                                            <th>互动道具</th>
+				                                            <th>自定义道具</th>
+				                                            <th>转盘</th>
+				                                            <th>夺宝</th>
+				                                            <th>时间</th>
+				                                    </thead>
+				                                    <tbody id="table_main" class="table_main">
+				                                    	<volist name="resdata" id='vos' key='k'>
+				                        				<tr class="odd gradeX">
+				                                            <td>
+				                                            		<!-- <label>
+				                                            			<input type="checkbox" class="selcheck" value="{$account.id}">
+				                                            		</label> -->
+				                                            		{$k}
+				                                            </td>
+				                                            <td class="center">{$vos.user_id}</td>
+				                                            <td class="center">
+																	<switch name="gameid">
+																	    <case value="1">血流麻将</case>
+																	    <case value="2">斗地主</case>
+																	    <default />default
+																	</switch>
+				                                            </td>
+				                                            <td class="center">...</td>
+				                                            <td class="center">{$vos.goods_name}</td>
+				                                            <td class="center">{$vos.user_phone}</td>
+				                                        </tr>
+				                                    </volist>
+				                                    </tbody>
+				                                </table>
+				                                <div class="col-md-1 col-sm-1">
+				                                	<select class="form-control" id="pagenums" >
+													  <for start="0" end="$pages"  step="1">
+													  	<option>{$i+1}</option>
+ 														</for>
+													</select>
+				                                </div>
+				                                </p>
+				                            </div>
+		                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+        	window.onload=function(){
+        		new loadSource("__JS__/income.js");
+        	}
+        </script>
+</block>

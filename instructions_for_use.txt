@@ -1,0 +1,52 @@
+Some explanations on how Wampserver works
+
+After launching Wampserver by its shortcut, you will see the brief appearance of a window, then you must get the Wampmanager icon   in the notification area at the bottom right of the screen. This icon must be GREEN.
+In some rare cases, this icon does not appear but is in the Hidden Icons area.
+It is then necessary to look in the window of the hidden icons of the notification area: 
+Click the vertical chevron to the left of the notification area: 
+then drag and drop the Wampmanager icon into the notification area:
+
+This icon can be of three colors:   Red means that no service is started, Orange means that at least one service is started and Green means that all services are started.
+To be able to use Wampserver, it is imperative that the icon is green. There is no point in doing Apache, PHP, MySQL or MariaDB operations until the icon is green. If your icon is not green, see For questions regarding... at the end of these explanations.
+Right-clicking on this icon gives you access to:	
+ 
+	
+- About: used versions and other information
+- Refresh: Re-creates the wampmanager.ini file
+- Help: Accessing the Wampserser Help Forums
+- Language: Change the language used
+- Wamp parameters: Allows you to modify certain Wampserver options
+- Tools: Utilities for problem solving
+- Close: Required to Quit Wampserver. Must be done BEFORE closing Windows to allow dumping of PHP, MySQL and MariaDB caches and avoid data loss.
+
+Left-clicking on this icon gives you access to: 
+
+- Displays the numbers of the used versions
+- Direct access to the Wampserver homepage (localhost)
+- Direct access to PhpMyAdmin (MySQL / MariaDB GUI)*
+- Direct access to Adminer(MySQL / MariaDB GUI)*
+* Can be enabled or disabled in Wamp Settings.
+- Virtualhosts Submenu
+- Open File Explorer on the www folder
+- Different submenus for Apache, PHP, MySQL and MariaDB allowing to change version; add or remove module loading or extensions; modify parameters; administering services for each entity; open some files in the default text editor (php.ini, httpd.conf, https-vhosts.conf, my.ini, log files, etc.)
+- Services Management: Stop, Start, Restart
+
+--- Launch phpMyAdmin
+When starting phpMyAdmin, you will be asked for a user name and password.
+After installing Wampserver 3, the default username is "root" (without quotes) and there is no password, which means that you must leave the form Password box empty.
+There will be a warning:
+You are connected as 'root' with no password, which corresponds to the default MySQL privileged account. Your MySQL server is running with this default, is open to intrusion, and you really should fix this security hole by setting a password for user 'root'.
+This is not a problem as long as access to Phpmyadmin remain locally.
+However, some web applications or CMS asking that the MySQL user has a password. In which case, you will create a user with password via the PhpMyAdmin Accounts Users tab.
+
+--- Support of MariaDB
+Read the file "mariadb_support.txt" into the wamp install directory
+
+--- Using the menus and submenus of Wampmanager
+Do not use the keyboard to navigate through the menus and submenus of Wampmanager icon.
+
+--- For questions regarding Wampserver 3
+Please use the specific forum: http://forum.wampserver.com/list.php?2
+Do not use an existing discussion, but create your own thread:
+New Topic
+after having read  READ BEFORE YOU ASK A QUESTION in this forum.

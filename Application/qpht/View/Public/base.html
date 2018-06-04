@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>棋牌后台</title>
+    <!-- Bootstrap Styles-->
+    <link href="__CSS__/bootstrap.css" rel="stylesheet" />
+    <!-- FontAwesome Styles-->
+    <link href="__CSS__/font-awesome.css" rel="stylesheet" />
+    <!-- Morris Chart Styles-->
+    <link href="__JS__/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <!-- Custom Styles-->
+    <link href="__CSS__/custom-styles.css" rel="stylesheet" />
+    <!-- Google Fonts-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="__JS__/Lightweight-Chart/cssCharts.css"> 
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <link rel="stylesheet" href="__CSS__/selfstyle.css">
+    <link rel="stylesheet" href="__CSS__/jquery.datetimepicker.css">
+    <script src="__JS__/jquery-1.10.2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script type="text/javascript">
+         function loadSource(src){
+            this.src = src;
+            var type = src.split(".").pop();
+            var s = document.createElement('script');
+            s.src = this.src+"?"+Math.random();
+            s.async = true;
+            $('#footscript').append(s);
+        }
+    </script>
+    <script type="text/javascript">
+        Date.prototype.format = function (format) {
+        var args = {
+            "M+": this.getMonth() + 1,
+            "d+": this.getDate(),
+            "h+": this.getHours(),
+            "m+": this.getMinutes(),
+            "s+": this.getSeconds(),
+        };
+        if (/(y+)/.test(format))
+            format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var i in args) {
+            var n = args[i];
+            if (new RegExp("(" + i + ")").test(format))
+                format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? n : ("00" + n).substr(("" + n).length));
+        }
+        return format;
+    };
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" id="test44"><strong >点秦棋牌后台</strong></a>
+                
+        <div id="sideNav" href=""><i class="fa fa-caret-right"></i></div>
+            </div>
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <!-- <li><a href="#"><i class="fa fa-user fa-fw"></i> 用户信息</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> 设置</a>
+                        </li> -->
+                        <li class="divider"></li>
+                        <li><a href="javascript:void(0);" id="outsystem"><i class="fa fa-sign-out fa-fw"></i> 登出</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+        </nav>
+        <!--/. NAV TOP  -->
+        <nav class="navbar-default navbar-side" role="navigation">
+            <input type="hidden" name="" id="aclog" value="/{$actionname}/{$actionname2}">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="main-menu">
+                    <volist name="moduleinfo1" id="vmodules">
+                        <if condition="($acid eq $vmodules['id'])">
+                            <li class="acli active" data-vx='{$vmodules.modulename}'>
+                        <else/>
+                            <li class="acli" data-vx='{$vmodules.modulename}'>
+                         </if>
+                            <a href="#"><i class="fa fa-sitemap"></i> {$vmodules.modulename}<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                            <volist name="menuinfo1" id="vmenus">
+                                <volist name="vmenus" id="vmenuss">
+                                    <if condition="$vmodules.id eq $vmenuss['moduleid']">
+                                        <li data-cc='mx'>
+                                            <a href="/qpht.php{$vmenuss.menurl}" class="menuac">{$vmenuss.menuname}</a>
+                                        </li>
+                                    </if>
+                                </volist>
+                            </volist>
+                            </ul>
+                        </li>
+                    </volist>  
+                </ul>
+            </div>
+        </nav>
+        <!-- /. NAV SIDE  -->
+      
+        <div id="page-wrapper">
+          <div class="header"> 
+                        <h1 class="page-header">
+                          <small>欢迎 {$username}</small>
+                        </h1>
+                        <ol class="breadcrumb">
+                      <li><a href="/qpht.php/index/index">首页</a></li>
+                      <li><a href="{$actions}">{$mdname}</a></li>
+                    </ol> 
+                                    
+        </div>
+            <div id="page-inner">
+                <block name="contents"></block>
+            </div>
+            <!-- /. PAGE INNER  -->
+        </div>
+        <!-- /. PAGE WRAPPER  -->
+    </div>
+     <div id="footscript"></div>
+    <!-- /. WRAPPER  -->
+    <!-- JS Scripts-->
+    <!-- jQuery Js -->
+   
+   <!--  <script src="__JS__/jquery.js"></script> -->
+    <!-- Bootstrap Js -->
+    <script src="__JS__/bootstrap.min.js"></script>
+    <script src="__JS__/jquery.datetimepicker.full.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="__JS__/jquery.metisMenu.js"></script>
+    <!-- Morris Chart Js -->
+    <!-- <script src="__JS__/morris/raphael-2.1.0.min.js"></script>
+    <script src="__JS__/morris/morris.js"></script> -->
+    
+    
+    <script src="__JS__/easypiechart.js"></script>
+    <script src="__JS__/easypiechart-data.js"></script>
+    
+     <script src="__JS__/Lightweight-Chart/jquery.chart.js"></script>
+     <script src="__JS__/pubfunction.js?1254565sda"></script>
+    
+    <!-- Custom Js -->
+    <script src="__JS__/custom-scripts.js"></script>
+    
+      <script>
+        $('#begin_time').datetimepicker({
+            lang:'ch',
+            timepicker:false,
+            format:'Y-m-d',
+            formatDate:'Y/m/d'
+        }); 
+        $('#end_time').datetimepicker({
+            lang:'ch',
+            timepicker:false,
+            format:'Y-m-d',
+            formatDate:'Y/m/d'
+        });
+        new loadSource("__JS__/accountfun.js");  
+      </script>
+   
+</body>
+
+</html>
