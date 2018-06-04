@@ -53,16 +53,15 @@ var gameuser=(function($){
 			}
 			if(etime-btime>=0){
 				if(etime!=0||btime!=0){
-				 	var isdate = new Date(dataobj.entime.replace(/-/g,"/"));  //把日期字符串转换成日期格式
-				    isdate = new Date((isdate/1000+(86400*1))*1000);  //日期加1天
-				    var pdate = isdate.getFullYear()+"-"+(isdate.getMonth()+1)+"-"+(isdate.getDate()); 
-					dataobj.entime=pdate;
+				 	// var isdate = new Date(dataobj.entime.replace(/-/g,"/"));  //把日期字符串转换成日期格式
+				  //   isdate = new Date((isdate/1000+(86400*1))*1000);  //日期加1天
+				  //   var pdate = isdate.getFullYear()+"-"+(isdate.getMonth()+1)+"-"+(isdate.getDate())+` 23:59:59`; 
+					dataobj.entime=dataobj.entime+` 23:59:59`;
 				}
 				var cod_playerid=$('#playerid').val();
 				var cod_playertype=$('#usertype').val();
 				dataobj.playid=cod_playerid;
 				dataobj.playertype=cod_playertype;
-				console.log(dataobj);
 				expage(dataobj);
 			}else{
 				alert('选择正确的时间区间');
@@ -291,7 +290,7 @@ var gameuser=(function($){
 				goldtype:15
 			}
 			dataobjgold.data=tdata;
-			dataobjgold.url=`http://sqlx.maiugame.com/qpht.php/Gold/getGoldInfos`;
+			dataobjgold.url=`/qpht.php/Gold/getGoldInfos`;
 			expagegold(dataobjgold);
 		});
 		$('#table_main').on('click','.logdiamond',function(){
@@ -299,10 +298,10 @@ var gameuser=(function($){
 			var tdata={
 				userid:useridx,
 				gameid:dataobj.gameid,
-				goldtype:16
+				goldtype:15
 			}
 			dataobjgold.data=tdata;
-			dataobjgold.url=`http://sqlx.maiugame.com/qpht.php/Gold/getGoldInfos`;
+			dataobjgold.url=`/qpht.php/Gold/getGoldInfos`;
 			expagegold(dataobjgold);
 		})
 	}

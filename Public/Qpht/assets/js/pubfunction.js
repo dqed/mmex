@@ -23,37 +23,37 @@ var pubFun=(function($){
 				page:1,
 			};
 	var fynum=20;
-	var getexcel=function(){
-		$('#getexclbtn').on('click',function(){
-			var url="http://sqlx.maiugame.com/qpht.php/gamemanage/getexcelplus?"+"gameid="+dataobj.gameid+"&playid="+dataobj.playid+"&playertype="+dataobj.playertype+"&module="+dataobj.module+"&nickname="+dataobj.nickname+"&bgtime="+dataobj.bgtime+"&entime="+dataobj.entime+"&phone="+dataobj.phone;
-			console.log(url);
-			window.open(url);
-			return false; 
-			$.ajax({
-			    type: "post",
-			    data: dataobj,
-			    url: "/qpht.php/gamemanage/getexcel",
-			    beforeSend: function () {
-			        // 禁用按钮防止重复提交，发送前响应
-			        pubFun.showloading();
-			    },
-			    success: function (data) {
-			        	//console.log(data);
-			            pubFun.hideloading();
-			            var $eleForm = $("<form method='get'></form>");
-			            $eleForm.attr("action",data.url);
-			            $(document.body).append($eleForm);
-			            $eleForm.submit(); 
-			    },
-			    complete: function () {//完成响应
+	// var getexcel=function(){
+	// 	$('#getexclbtn').on('click',function(){
+	// 		var url="/qpht.php/gamemanage/getexcelplus?"+"gameid="+dataobj.gameid+"&playid="+dataobj.playid+"&playertype="+dataobj.playertype+"&module="+dataobj.module+"&nickname="+dataobj.nickname+"&bgtime="+dataobj.bgtime+"&entime="+dataobj.entime+"&phone="+dataobj.phone;
+	// 		console.log(url);
+	// 		window.open(url);
+	// 		return false; 
+	// 		$.ajax({
+	// 		    type: "post",
+	// 		    data: dataobj,
+	// 		    url: "/qpht.php/gamemanage/getexcel",
+	// 		    beforeSend: function () {
+	// 		        // 禁用按钮防止重复提交，发送前响应
+	// 		        pubFun.showloading();
+	// 		    },
+	// 		    success: function (data) {
+	// 		        	//console.log(data);
+	// 		            pubFun.hideloading();
+	// 		            var $eleForm = $("<form method='get'></form>");
+	// 		            $eleForm.attr("action",data.url);
+	// 		            $(document.body).append($eleForm);
+	// 		            $eleForm.submit(); 
+	// 		    },
+	// 		    complete: function () {//完成响应
 			         
-			    },
-			    error: function (data) {
-			        console.info("error: " + data.responseText);
-			    }
-			});
-		})
-	}
+	// 		    },
+	// 		    error: function (data) {
+	// 		        console.info("error: " + data.responseText);
+	// 		    }
+	// 		});
+	// 	})
+	// }
 	var initLoading = function(){
 	    $("body").append("<!-- loading -->" +
 	            "<div class='modal fade' id='loading' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' data-backdrop='static'>" +

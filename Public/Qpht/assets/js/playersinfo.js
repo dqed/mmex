@@ -29,10 +29,10 @@ var gameuser=(function($){
 			}
 			if(etime-btime>=0){
 				if(etime!=0||btime!=0){
-				 	var isdate = new Date(dataobj.entime.replace(/-/g,"/"));  //把日期字符串转换成日期格式
-				    isdate = new Date((isdate/1000+(86400*1))*1000);  //日期加1天
-				    var pdate = isdate.getFullYear()+"-"+(isdate.getMonth()+1)+"-"+(isdate.getDate()); 
-					dataobj.entime=pdate;
+				 	// var isdate = new Date(dataobj.entime.replace(/-/g,"/"));  //把日期字符串转换成日期格式
+				  //   isdate = new Date((isdate/1000+(86400*1))*1000);  //日期加1天
+				  //   var pdate = isdate.getFullYear()+"-"+(isdate.getMonth()+1)+"-"+(isdate.getDate()); 
+					dataobj.entime=dataobj.entime++` 23:59:59`;
 				}
 				var cod_playerid=$('#playerid').val();
 				var cod_playertype=$('#usertype').val();
