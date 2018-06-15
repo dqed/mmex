@@ -20,7 +20,7 @@ class PublicsController extends Controller{
 		 		$userc=new UserController();
 		 		$token=$userc->jwtencode($dataarr);
 		 		cookie('token',$token);
-		 		$this->success('登录成功', U('/qp/Index/index'));
+		 		$this->success('登录成功', U('/Index/index'));
 		 	}else{
 		 		$this->error('密码错误');
 		 	}

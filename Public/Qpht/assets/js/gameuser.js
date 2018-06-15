@@ -53,9 +53,6 @@ var gameuser=(function($){
 			}
 			if(etime-btime>=0){
 				if(etime!=0||btime!=0){
-				 	// var isdate = new Date(dataobj.entime.replace(/-/g,"/"));  //把日期字符串转换成日期格式
-				  //   isdate = new Date((isdate/1000+(86400*1))*1000);  //日期加1天
-				  //   var pdate = isdate.getFullYear()+"-"+(isdate.getMonth()+1)+"-"+(isdate.getDate())+` 23:59:59`; 
 					dataobj.entime=dataobj.entime+` 23:59:59`;
 				}
 				var cod_playerid=$('#playerid').val();
@@ -69,14 +66,12 @@ var gameuser=(function($){
 		})
 	}
 	var changeTable=function(data,dataobj){
+		var infonum=data[4];//总数据
 		var pageico=data[3];//当前页码
 		var page=data[0];//总页数
 		var data=data[1];//返回数据
-		// var stime=;//查询开始时间
-		// var etime=//查询结束时间
-		// console.log(data);
-		// return false;
-		//$('#timespan').attr('data-begin',dataobj.bgtime).attr('data-end',dataobj.entime);
+		
+		//alert(typeof(infonum));
 		var html='';
 		$.each(data, function(index, val) {
 			temp="<tr class='odd gradeX' data-userid='"+$(this)[0].userid+"'><td class='center'>"+((pageico-1)*pubFun.fynum+index+1)+"</td>";
@@ -86,7 +81,7 @@ var gameuser=(function($){
 			temp+="<td class='center'>"+$(this)[0].platform+"</td>";
 			temp+="<td class='center'>"+$(this)[0].sex+"</td>";
 			temp+="<td class='center'>"+$(this)[0].create_time+"</td>";
-			temp+="<td class='center'>"+$(this)[0].login_time+"</td>";
+			temp+="<td class='center'>"+$(this)[0].last_update+"</td>";
 			temp+="<td class='center logold canclick'>"+$(this)[0].gold+"</td>";
 			temp+="<td class='center logdiamond canclick'>"+$(this)[0].diamond+"</td>";
 			temp+="<td class='center logluck'>"+$(this)[0].luck_tick+"</td>";
@@ -98,39 +93,16 @@ var gameuser=(function($){
 			html+=temp;
 		});
 		$('#table_main').html(html);
-		var temppage='';
-		for (var i = 0; i < page; i++) {
-			var x= i+1
-			temppage+="<option vaule='"+x+"'>"+x+"</option>";
-		}
-		//console.log(dataobj);
-		$('#pagenums').html(temppage);
+		$('#infosnum').html(infonum);
+		$('#table_mainx').html(html);
 		$('#allpages').html(page);
-		//pageico==1,说明重新进行了一次查询，重新绑定翻页函数
-		if(pageico==1){
-			$('#pagenums').unbind();
-			$('#pagenums').on('change',function(){
-				dataobj.page=$(this).val();
-				expage(dataobj);
-			})	
-		}
-		$('#pagenums option').each(function(index, el) {
-			if($(this).val()==pageico){
-				$("#pagenums").val(pageico);
-			}
-		});
+		$("#pagenums").val(pageico);
 		
 	 }
 	 var changeTablex=function(data,dataobjgold){
-		console.log(data);
 		var pageico=data[3];//当前页码
 		var page=data[0];//总页数
 		var data=data[1];//返回数据
-		// var stime=;//查询开始时间
-		// var etime=//查询结束时间
-		// console.log(data);
-		// return false;
-		//$('#timespan').attr('data-begin',dataobj.bgtime).attr('data-end',dataobj.entime);
 		if(dataobjgold.data.goldtype==15){
 			$('#myModalLabelx').html('金币明细');
 		}else if(dataobjgold.data.goldtype==16){
@@ -165,7 +137,7 @@ var gameuser=(function($){
 			if($(this).val()==pageico){
 				$("#pagenumxx").val(pageico);
 			}
-		});	
+		});
 	 }
 	var expage=function(conds){
 		$.ajax({
@@ -188,9 +160,6 @@ var gameuser=(function($){
 			        console.info("error: " + data.responseText);
 			    }
 			});
-		// $.post("/qpht.php/gamemanage/seachdata",conds,function(data,status){
-	 	//  		changeTable(data,conds); 
-	 	//  	});
 	}
 	var expagegold=function(conds){
 		$.ajax({
@@ -204,9 +173,6 @@ var gameuser=(function($){
 			    success: function (data) {
 			    	changeTablex(data,conds);
 			    	$('#goldModal').modal('show');
-			            // pubFun.hideloading();
-			            // changeTable(data,conds);
-			            // pubFun.pageaction();
 			    },
 			    complete: function () {//完成响应
 			         
@@ -230,11 +196,8 @@ var gameuser=(function($){
 	}
 	//默认翻页方法
 	var defaultexpage=function(){
-		var cod_playerid=null;
-		var cod_playertype=0;
-		var gameid=$('#gameid').val();
-		$('#pagenums').on('change',function(){
-				dataobj.page=$(this).val();
+		$('#gopage').on('click',function(){
+				dataobj.page=$('#pagenums').val();
 				expage(dataobj);
 			})
 	}
@@ -298,7 +261,7 @@ var gameuser=(function($){
 			var tdata={
 				userid:useridx,
 				gameid:dataobj.gameid,
-				goldtype:15
+				goldtype:16
 			}
 			dataobjgold.data=tdata;
 			dataobjgold.url=`/qpht.php/Gold/getGoldInfos`;

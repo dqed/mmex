@@ -17,8 +17,8 @@ use Think\Model;
  */
 
 class GoodsModel extends Model {		
-	public function getGoodsPrice(){
-		$res=$this->getField('good_id,good_price');
+	public function getGoodsPrice($id){
+		$res=$this->where('platfrom_id='.$id)->getField('aibei_id,good_price');
 		return $res;
 	}
 }

@@ -36,11 +36,6 @@ var convertgoods=(function($){
 		console.log(pageico);
 		var page=data[0];//总页数
 		var data=data[1];//返回数据
-		// var stime=;//查询开始时间
-		// var etime=//查询结束时间
-		// console.log(data);
-		// return false;
-		//$('#timespan').attr('data-begin',dataobj.bgtime).attr('data-end',dataobj.entime);
 		var html='';
 		$.each(data, function(index, val) {
 			temp="<tr class='odd gradeX'><td class='center'>"+((pageico-1)*pubFun.fynum+index+1)+"</td>";
@@ -52,28 +47,8 @@ var convertgoods=(function($){
 			html+=temp;
 		});
 		$('#table_main').html(html);
-		var temppage='';
-		for (var i = 0; i < page; i++) {
-			var x= i+1
-			temppage+="<option vaule='"+x+"'>"+x+"</option>";
-		}
-		//console.log(dataobj);
-		$('#pagenums').html(temppage);
 		$('#allpages').html(page);
-		//pageico==1,说明重新进行了一次查询，重新绑定翻页函数
-		if(pageico==1){
-			$('#pagenums').unbind();
-			$('#pagenums').on('change',function(){
-				dataobj.page=$(this).val();
-				expage(dataobj);
-			})	
-		}
-		$('#pagenums option').each(function(index, el) {
-			if($(this).val()==pageico){
-				$("#pagenums").val(pageico);
-			}
-		});
-		
+		$("#pagenums").val(pageico);	
 	 }
 	var expage=function(conds){
 		$.ajax({
@@ -97,18 +72,11 @@ var convertgoods=(function($){
 			        console.info("error: " + data.responseText);
 			    }
 			});
-		// $.post("/qpht.php/gamemanage/seachdata3",conds,function(data,status){
-		// 	dataobj.gameid=data[2];
-	 //  		changeTable(data,conds);
-	 //  	});
 	}
 	//默认翻页方法
 	var defaultexpage=function(){
-		var cod_playerid=null;
-		var gameid=$('#gameid').val();
-		$('#pagenums').on('change',function(){
-				dataobj.page=$(this).val();
-				dataobj.gameid=$('#gameid').val();
+		$('#gopage').on('click',function(){
+				dataobj.page=$('#pagenums').val();
 				expage(dataobj);
 			})
 	}

@@ -28,7 +28,8 @@ class GamemainModel extends Model {
 		        $lres=array();
 	        	$conds['beftime']=date("Y-m-d",strtotime($countime[0]['countime']));
 	        	$conds['endtime']=date('Y-m-d', time());
-	        	if($conds['beftime']!=$conds['endtime']){
+	        	$dtday=diffBetweenTwoDays($conds['beftime'],$conds['endtime']);
+	        	if($dtday>1){
 		            $conds['gameid']=$value['id'];
 		            $conds['gamename']=$value['gamename'];
 		            $oldplayers=A('qpht/Gamemanage')->gameProData($conds,true);
@@ -84,6 +85,63 @@ class GamemainModel extends Model {
 			$this->addAll($data);
 			$dbupdata->dbUp($nowday,$gameid);
 		}
+	}
+
+	public function getGameInfo($page,$gameid){
+		$count=$this->where('gameid='.$gameid)->count();
+        if($count>C(PAGE_NUM)){
+            $pagenum=ceil($count/C(PAGE_NUM));
+        }else{
+            $pagenum=1;
+        }
+        $countdata=$this->where('gameid='.$gameid)->order('countime desc')->limit(($page-1)*C(PAGE_NUM).','.C(PAGE_NUM))->select();
+        foreach ($countdata as $key => $value) {
+        	$p1=$value['oldplayer'];
+        	if($countdata[$key+1]){
+        		$p2=$countdata[$key+1]['newplayer'];
+        	}else{
+        		$c1=$value['countime'];
+        		$t1=prevday($c1);
+        		$map['countime']=$t1;
+        		$tempnew= $this->where($map)->where('gameid='.$gameid)->field('newplayer')->select();
+        		if($tempnew[0]['newplayer']){
+     				$p2=$tempnew[0]['newplayer'];
+        		}else{
+        			$p2=0;
+        		}
+        	}
+        	$countdata[$key]['oldx']=(number_format($p1/$p2,4)*100).'%';
+        }
+        $data[0]=$page;
+        $data[1]=$pagenum;
+        $data[2]=$countdata;
+        $data[3]=$gameid;
+        $data[4]=$count;
+        return $data;
+	}
+
+	public function getGameInfos($conds){
+		$map['gameid']=$conds['gameid'];
+		$map['countime']=array('between',$conds['beftime'].",".$conds['endtime']);
+        $countdata=$this->where($map)->order('countime desc')->select();
+        foreach ($countdata as $key => $value) {
+        	$p1=$value['oldplayer'];
+        	if($countdata[$key+1]){
+        		$p2=$countdata[$key+1]['newplayer'];
+        	}else{
+        		$c1=$value['countime'];
+        		$t1=prevday($c1);
+        		$map['countime']=$t1;
+        		$tempnew= $this->where($map)->field('newplayer')->select();
+        		if($tempnew[0]['newplayer']){
+     				$p2=$tempnew[0]['newplayer'];
+        		}else{
+        			$p2=0;
+        		}
+        	}
+        	$countdata[$key]['oldx']=(number_format($p1/$p2,4)*100).'%';
+        }
+        return $countdata;
 	}
 
 	public function GamePlayerInfo($key){

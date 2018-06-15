@@ -9,30 +9,28 @@ class IndexController extends BaseController {
     public function index(){
         $this->getmenuInfo();
         $gamemain=D('Gamemain');
-        $gamemain->updatadb();
+        // $gamemain->updatadb();
 
         $gameinfo=D('Gameinfo');
         $gameinfos=$gameinfo->where('state=1')->select();
-        // var_dump($gameinfos);
-        // exit();
         $lres=array();
         foreach ($gameinfos as $key => $value) {
             $gameid=$value['id'];
-            $countdata=$gamemain->where('gameid='.$gameid)->order('countime desc')->limit('0,7')->select();
-            $lres[$gameid]=$countdata;
+            $page=1;
+            $datas=$gamemain->getGameInfo($page,$gameid);
+            $lres[$datas[3]]=$datas;
         }
-        // var_dump($lres);
-        // exit();
         $this->assign('lres',$lres);
         $this->show();
     }
 
-    public function gamechange(){
+    public function seachdata(){
         $data=I('post.');
         $gameid=$data['gameid'];
+        $page=$data['page'];
         $gamemain=D('Gamemain');
-        $resdata=$gamemain->order('countime desc')->where('gameid='.$gameid)->limit('0,7')->select(); 
-        $this->ajaxReturn($resdata);
+        $datas=$gamemain->getGameInfo($page,$gameid);
+        $this->ajaxReturn($datas);
     }
 
     public function menuAction(){

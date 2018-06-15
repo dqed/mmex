@@ -20,9 +20,9 @@
                             <div class="tab-content">
                                <volist name='lres' id='vos'>
                                	 <if condition="($key eq 1)">
-                               	 	<div class="tab-pane active"  id="my-table{$key}" role="tabpanel">
+                               	 	<div class="tab-pane active" id="my-table{$key}" role="tabpanel">
                                	 	<else />
-                            	<div class="tab-pane"  id="my-table{$key}" role="tabpanel">
+                            			<div class="tab-pane" id="my-table{$key}" role="tabpanel">
                             		</if>
                                     <div class="table-responsive">
 			                                <table class="table table-striped table-bordered table-hover">
@@ -35,15 +35,15 @@
 			                                            <th>总对局</th>
 			                                            <th>平均对局</th>
 			                                    </thead>
-		                             			<tbody id="table_main">
-			                                    	<volist name='vos' id='vort'>
+		                             			<tbody class="table_main">
+			                                    	<volist name='vos[2]' id='vort'>
 		                                				<tr class="odd gradeX">
 				                                            <td class="center">
 				                                            		{$vort.countime}
 				                                            </td>
 				                                            <td class="center">{$vort.newplayer}</td>
 				                                            <td class="center">
-																	{$vort.oldplayer}
+																	{$vort.oldplayer} / {$vort.oldx}
 				                                            </td>
 				                                            <td class="center">{$vort.activeplayer}</td>
 				                                            <td class="center">{$vort.allplay}</td>
@@ -53,8 +53,31 @@
 			                                    </tbody>
 			                                </table>
 		                            </div>
-		                         </div>
+                            	</div>
 		                       </volist>
+		                       <div class="row pagediv" style="position: relative;">
+                                	<div class="btn-group col-md-2 col-sm-2 pagechange" role="group" aria-label="..." style="width: 110px">
+									  <button type="button" class="btn btn-default" id="goprevx">
+									  	 <span class="glyphicon glyphicon-fast-backward" aria-hidden="true"></span>
+									  </button>
+									  <button type="button" class="btn btn-default" id="goprev">
+									  	 <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
+									  </button>
+									</div>
+	                                <div style="float: left; width: 200px;">
+										<input type="tel" id="pagenums" data-page="{$vos[1]}" name="" value="1" class="form-control" placeholder="" style="width: 70px;float: left;"><span style=" display: inline-block;position: relative; left: 10px ;top:6px">共<i id="allpages">{$vos[1]}</i>页</span>
+										<button type="" class="btn btn-info gopage" style="float: right;">跳转</button>
+									</div>
+									<!-- <p style="position: absolute;left:190px;bottom:30px"></p> -->
+									<div class="btn-group col-md-2 col-sm-2 pagechange" role="group" aria-label="...">
+									  <button type="button" class="btn btn-default" id="gonext">
+									  	<span class="glyphicon glyphicon-forward" aria-hidden="true"></span>
+									  </button>
+									  <button type="button" class="btn btn-default" id="gonextx">
+									  	<span class="glyphicon glyphicon-fast-forward" aria-hidden="true"></span>
+									  </button>
+									</div>
+								</div>
                             </div>
                         </div>
                     </div>

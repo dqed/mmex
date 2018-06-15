@@ -123,69 +123,76 @@
                 <div class="col-md-12 col-sm-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            游戏概览
+                            收入情况
+                            <form class="form-inline">
+							  <div class="form-group">
+							    <label for="exampleInputName2">项目名称:</label>
+							    <select class="form-control" id="gametype">
+							    	<option value="0">全部</option>
+	                                <?php if(is_array($gameinfo)): $i = 0; $__LIST__ = $gameinfo;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["gamename"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+								</select>
+							  </div>
+							  <div class="form-group">
+							    <label for="exampleInputEmail2">指定日期</label>
+							    <input type="text" class="form-control" id="begin_time">——
+							    <input type="text" class="form-control" id="end_time">
+							  </div>
+							  <button type="button" class="btn btn-default" id="seachbtn">查询</button>
+							  <button type="button" class="btn btn-default" id="seachbtnevery">按天查询</button>
+							</form>
                         </div>
                         <div class="panel-body">
-                            <ul class="nav nav-tabs" role="tablist">
-                            	<?php if(is_array($gameinfo)): $i = 0; $__LIST__ = $gameinfo;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if(($vo["id"] == 1)): ?><li class="active" role="presentation"><a href="#my-table<?php echo ($vo["id"]); ?>" role="tab" data-toggle="tab" aria-controls="my-table<?php echo ($vo["id"]); ?>" data-gameid=<?php echo ($vo["id"]); ?>><?php echo ($vo["gamename"]); ?></a>
-	                                <?php else: ?>
-	                                	<li role="presentation"><a href="#my-table<?php echo ($vo["id"]); ?>" data-toggle="tab" aria-controls="my-table<?php echo ($vo["id"]); ?>" role="tab" data-gameid=<?php echo ($vo["id"]); ?>><?php echo ($vo["gamename"]); ?></a><?php endif; endforeach; endif; else: echo "" ;endif; ?>
-                            </ul>
+                            <!-- <ul class="nav nav-tabs">
+                                <li class="active"><a href="#home" data-toggle="tab">血流成河</a>
+                                </li>
+                                <li class=""><a href="#profile" data-toggle="tab">斗地主</a>
+                                </li>
+                            </ul> -->
+
                             <div class="tab-content">
-                               <?php if(is_array($lres)): $i = 0; $__LIST__ = $lres;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vos): $mod = ($i % 2 );++$i; if(($key == 1)): ?><div class="tab-pane active" id="my-table<?php echo ($key); ?>" role="tabpanel">
-                               	 	<?php else: ?>
-                            			<div class="tab-pane" id="my-table<?php echo ($key); ?>" role="tabpanel"><?php endif; ?>
-                                    <div class="table-responsive">
-			                                <table class="table table-striped table-bordered table-hover">
-			                                    <thead>
-			                                        <tr>
-			                                            <th>日期</th>
-			                                            <th>新增</th>
-			                                            <th>次留</th>
-			                                            <th>总活跃</th>
-			                                            <th>总对局</th>
-			                                            <th>平均对局</th>
-			                                    </thead>
-		                             			<tbody class="table_main">
-			                                    	<?php if(is_array($vos[2])): $i = 0; $__LIST__ = $vos[2];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vort): $mod = ($i % 2 );++$i;?><tr class="odd gradeX">
-				                                            <td class="center">
-				                                            		<?php echo ($vort["countime"]); ?>
+                            	<div class="tab-pane fade active in" id="home">
+                            		<input type="hidden" name="" value="<?php echo ($gameid); ?>" id="gameid">
+                            		<input type="hidden" value="asc" data-begin="<?php echo ($yday); ?>" data-end="<?php echo ($tday); ?>" id="timespan">
+		                                    <div class="table-responsive">
+				                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+				                                    <thead>
+				                                        <tr>
+				                                            <th>项目名称</th>
+				                                            <th>金币场服务费</th>
+				                                            <th>互动道具</th>
+				                                            <th>自定义道具</th>
+				                                            <th>转盘</th>
+				                                            <th>夺宝</th>
+				                                            <th>时间</th>
+				                                    </thead>
+				                                    <tbody id="table_main" class="table_main">
+				                                    	<?php if(is_array($resdata)): $k = 0; $__LIST__ = $resdata;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vos): $mod = ($k % 2 );++$k;?><tr class="odd gradeX">
+				                                            <td>
+				                                            		<!-- <label>
+				                                            			<input type="checkbox" class="selcheck" value="<?php echo ($account["id"]); ?>">
+				                                            		</label> -->
+				                                            		<?php echo ($k); ?>
 				                                            </td>
-				                                            <td class="center"><?php echo ($vort["newplayer"]); ?></td>
+				                                            <td class="center"><?php echo ($vos["user_id"]); ?></td>
 				                                            <td class="center">
-																	<?php echo ($vort["oldplayer"]); ?> / <?php echo ($vort["oldx"]); ?>
+																	<?php switch($gameid): case "1": ?>血流麻将<?php break;?>
+																	    <?php case "2": ?>斗地主<?php break;?>
+																	    <?php default: ?>default<?php endswitch;?>
 				                                            </td>
-				                                            <td class="center"><?php echo ($vort["activeplayer"]); ?></td>
-				                                            <td class="center"><?php echo ($vort["allplay"]); ?></td>
-				                                            <td class="center"><?php echo ($vort["aveplay"]); ?></td>
+				                                            <td class="center">...</td>
+				                                            <td class="center"><?php echo ($vos["goods_name"]); ?></td>
+				                                            <td class="center"><?php echo ($vos["user_phone"]); ?></td>
 				                                        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-			                                    </tbody>
-			                                </table>
-		                            </div>
-                            	</div><?php endforeach; endif; else: echo "" ;endif; ?>
-		                       <div class="row pagediv" style="position: relative;">
-                                	<div class="btn-group col-md-2 col-sm-2 pagechange" role="group" aria-label="..." style="width: 110px">
-									  <button type="button" class="btn btn-default" id="goprevx">
-									  	 <span class="glyphicon glyphicon-fast-backward" aria-hidden="true"></span>
-									  </button>
-									  <button type="button" class="btn btn-default" id="goprev">
-									  	 <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
-									  </button>
-									</div>
-	                                <div style="float: left; width: 200px;">
-										<input type="tel" id="pagenums" data-page="<?php echo ($vos[1]); ?>" name="" value="1" class="form-control" placeholder="" style="width: 70px;float: left;"><span style=" display: inline-block;position: relative; left: 10px ;top:6px">共<i id="allpages"><?php echo ($vos[1]); ?></i>页</span>
-										<button type="" class="btn btn-info gopage" style="float: right;">跳转</button>
-									</div>
-									<!-- <p style="position: absolute;left:190px;bottom:30px"></p> -->
-									<div class="btn-group col-md-2 col-sm-2 pagechange" role="group" aria-label="...">
-									  <button type="button" class="btn btn-default" id="gonext">
-									  	<span class="glyphicon glyphicon-forward" aria-hidden="true"></span>
-									  </button>
-									  <button type="button" class="btn btn-default" id="gonextx">
-									  	<span class="glyphicon glyphicon-fast-forward" aria-hidden="true"></span>
-									  </button>
-									</div>
-								</div>
+				                                    </tbody>
+				                                </table>
+				                                <div class="col-md-1 col-sm-1">
+				                                	<select class="form-control" id="pagenums" >
+													  <?php $__FOR_START_13061__=0;$__FOR_END_13061__=$pages;for($i=$__FOR_START_13061__;$i < $__FOR_END_13061__;$i+=1){ ?><option><?php echo ($i+1); ?></option><?php } ?>
+													</select>
+				                                </div>
+				                                </p>
+				                            </div>
+		                                </div>
                             </div>
                         </div>
                     </div>
@@ -194,7 +201,7 @@
         </div>
         <script type="text/javascript">
         	window.onload=function(){
-        		new loadSource("/Public/qpht/assets/js/index.js");
+        		new loadSource("/Public/qpht/assets/js/income.js");
         	}
         </script>
 

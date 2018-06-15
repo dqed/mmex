@@ -1,0 +1,23 @@
+<div class="row pagediv" style="position: relative; width: 100%;overflow: hidden;">
+	<div class="btn-group col-md-2 col-sm-2 pagechange" role="group" aria-label="..." style="width: 110px">
+	<button type="button" class="btn btn-default" id="goprevx">
+		 <span class="glyphicon glyphicon-fast-backward" aria-hidden="true"></span>
+	</button>
+	<button type="button" class="btn btn-default" id="goprev">
+		 <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
+	</button>
+	</div>
+	<div style="float: left;width: 220px">
+	<input type="tel" id="pagenums" data-page="{$pages}" name="" value="1" class="form-control" placeholder="" style="width: 70px" style="float: left;">
+	<button type="" class="btn btn-info" id='gopage' style="float: right;position: relative; bottom: 34px;">跳转</button>
+	</div>
+	<p style="position: absolute;left:190px;bottom:30px">共<i id="allpages">{$pages}</i>页</p>
+	<div class="btn-group col-md-2 col-sm-2 pagechange" role="group" aria-label="...">
+	<button type="button" class="btn btn-default" id="gonext">
+		<span class="glyphicon glyphicon-forward" aria-hidden="true"></span>
+	</button>
+	<button type="button" class="btn btn-default" id="gonextx">
+		<span class="glyphicon glyphicon-fast-forward" aria-hidden="true"></span>
+	</button>
+	</div>
+</div>

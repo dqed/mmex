@@ -34,8 +34,10 @@ class BaseController extends Controller {
         //菜单权限检测
         $jurmenu=$this->jurCheck();
         $username=$jurmenu['user'];
-		$module=D('Module');
+		    $module=D('Module');
         $menu=D('Menu');
+        $gamemain=D('Gamemain');
+        $gamemain->updatadb();//更新统计信息
         $mdurl=strtolower('/'.CONTROLLER_NAME.'/'.ACTION_NAME);
         $m1['menurl']=$mdurl;
         $menuid=$menu->where($m1)->getField('id');

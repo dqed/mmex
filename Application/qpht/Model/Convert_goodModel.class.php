@@ -59,7 +59,7 @@ class Convert_goodModel extends BaseplayinfoModel {
                         $v['user_id'],$v['game_name'],$v['data'],$v['goods_name'],$v['user_phone']  
                     );  
                 }  
-               exportToExcel('兑换记录_'.time().$vvv.'.csv',$exl11,$exl[$kkk]);  
+               	exportToExcel('兑换物品_'.time().$vvv.'.csv',$exl11,$exl[$kkk]);  
             }  
             exit();
 		}

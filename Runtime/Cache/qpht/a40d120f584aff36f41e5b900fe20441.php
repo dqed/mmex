@@ -105,6 +105,7 @@
             </div>
         </nav>
         <!-- /. NAV SIDE  -->
+      
         <div id="page-wrapper">
           <div class="header"> 
                         <h1 class="page-header">
@@ -123,69 +124,99 @@
                 <div class="col-md-12 col-sm-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            游戏概览
+                            兑换模块
+                            <form class="form-inline">
+							  <div class="form-group">
+							    <label for="exampleInputName2">用户ID:</label>
+							    <input type="text" class="form-control" id="playerid" placeholder="用户ID">
+							  </div>
+							  <div class="form-group">
+							    <label for="exampleInputEmail2">兑换游戏:</label>
+							    <select class="form-control" id="gametype">
+							       <?php if(is_array($gameinfo)): $i = 0; $__LIST__ = $gameinfo;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["id"]); ?>"><?php echo ($vo["gamename"]); ?></option>
+								  <!-- <option value="2">斗地主</option> --><?php endforeach; endif; else: echo "" ;endif; ?>
+								</select>
+							  </div>
+							  <div class="form-group">
+							    <label for="exampleInputName2">联系方式:</label>
+							    <input type="text" class="form-control" id="playerphone" placeholder="联系方式">
+							  </div>
+							  <button type="button" class="btn btn-default" id="seachbtn">查询</button>
+							  <button type="button" class="btn btn-default" id="getexclbtn">导出</button>
+							</form>
                         </div>
                         <div class="panel-body">
-                            <ul class="nav nav-tabs" role="tablist">
-                            	<?php if(is_array($gameinfo)): $i = 0; $__LIST__ = $gameinfo;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if(($vo["id"] == 1)): ?><li class="active" role="presentation"><a href="#my-table<?php echo ($vo["id"]); ?>" role="tab" data-toggle="tab" aria-controls="my-table<?php echo ($vo["id"]); ?>" data-gameid=<?php echo ($vo["id"]); ?>><?php echo ($vo["gamename"]); ?></a>
-	                                <?php else: ?>
-	                                	<li role="presentation"><a href="#my-table<?php echo ($vo["id"]); ?>" data-toggle="tab" aria-controls="my-table<?php echo ($vo["id"]); ?>" role="tab" data-gameid=<?php echo ($vo["id"]); ?>><?php echo ($vo["gamename"]); ?></a><?php endif; endforeach; endif; else: echo "" ;endif; ?>
-                            </ul>
+                            <!-- <ul class="nav nav-tabs">
+                                <li class="active"><a href="#home" data-toggle="tab">血流成河</a>
+                                </li>
+                                <li class=""><a href="#profile" data-toggle="tab">斗地主</a>
+                                </li>
+                            </ul> -->
+
                             <div class="tab-content">
-                               <?php if(is_array($lres)): $i = 0; $__LIST__ = $lres;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vos): $mod = ($i % 2 );++$i; if(($key == 1)): ?><div class="tab-pane active" id="my-table<?php echo ($key); ?>" role="tabpanel">
-                               	 	<?php else: ?>
-                            			<div class="tab-pane" id="my-table<?php echo ($key); ?>" role="tabpanel"><?php endif; ?>
-                                    <div class="table-responsive">
-			                                <table class="table table-striped table-bordered table-hover">
-			                                    <thead>
-			                                        <tr>
-			                                            <th>日期</th>
-			                                            <th>新增</th>
-			                                            <th>次留</th>
-			                                            <th>总活跃</th>
-			                                            <th>总对局</th>
-			                                            <th>平均对局</th>
-			                                    </thead>
-		                             			<tbody class="table_main">
-			                                    	<?php if(is_array($vos[2])): $i = 0; $__LIST__ = $vos[2];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vort): $mod = ($i % 2 );++$i;?><tr class="odd gradeX">
-				                                            <td class="center">
-				                                            		<?php echo ($vort["countime"]); ?>
+                            	<div class="tab-pane fade active in" id="home">
+                            		<input type="hidden" name="" value="<?php echo ($gameid); ?>" id="gameid">
+                            		<input type="hidden" value="asc" data-begin="<?php echo ($yday); ?>" data-end="<?php echo ($tday); ?>" id="timespan">
+		                                    <div class="table-responsive">
+				                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+				                                    <thead>
+				                                        <tr>
+				                                            <th>编号</th>
+				                                            <th class="ordersign" field='1'>用户ID
+				                                            	<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true" data-orderfile="user_id" data-ordertype='asc'></span>
+				                                            </th>
+				                                            <th>兑换游戏</th>
+				                                            <th>兑换时间</th>
+				                                            <th>兑换物品</th>
+				                                            <th class="ordersign" field='1'>联系方式
+				                                            	<span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true" data-orderfile="user_phone" data-ordertype='asc'></span>
+				                                            </th>
+				                                    </thead>
+				                                    <tbody id="table_main" class="table_main">
+				                                    	<?php if(is_array($resdata)): $k = 0; $__LIST__ = $resdata;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vos): $mod = ($k % 2 );++$k;?><tr class="odd gradeX">
+				                                            <td>
+				                                            		<!-- <label>
+				                                            			<input type="checkbox" class="selcheck" value="<?php echo ($account["id"]); ?>">
+				                                            		</label> -->
+				                                            		<?php echo ($k); ?>
 				                                            </td>
-				                                            <td class="center"><?php echo ($vort["newplayer"]); ?></td>
+				                                            <td class="center"><?php echo ($vos["user_id"]); ?></td>
 				                                            <td class="center">
-																	<?php echo ($vort["oldplayer"]); ?> / <?php echo ($vort["oldx"]); ?>
+																	<?php switch($gameid): case "1": ?>血流麻将<?php break;?>
+																	    <?php case "2": ?>斗地主<?php break;?>
+																	    <?php default: ?>default<?php endswitch;?>
 				                                            </td>
-				                                            <td class="center"><?php echo ($vort["activeplayer"]); ?></td>
-				                                            <td class="center"><?php echo ($vort["allplay"]); ?></td>
-				                                            <td class="center"><?php echo ($vort["aveplay"]); ?></td>
+				                                            <td class="center"><?php echo ($vos["data"]); ?></td>
+				                                            <td class="center"><?php echo ($vos["goods_name"]); ?></td>
+				                                            <td class="center"><?php echo ($vos["user_phone"]); ?></td>
 				                                        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-			                                    </tbody>
-			                                </table>
-		                            </div>
-                            	</div><?php endforeach; endif; else: echo "" ;endif; ?>
-		                       <div class="row pagediv" style="position: relative;">
-                                	<div class="btn-group col-md-2 col-sm-2 pagechange" role="group" aria-label="..." style="width: 110px">
-									  <button type="button" class="btn btn-default" id="goprevx">
-									  	 <span class="glyphicon glyphicon-fast-backward" aria-hidden="true"></span>
-									  </button>
-									  <button type="button" class="btn btn-default" id="goprev">
-									  	 <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
-									  </button>
-									</div>
-	                                <div style="float: left; width: 200px;">
-										<input type="tel" id="pagenums" data-page="<?php echo ($vos[1]); ?>" name="" value="1" class="form-control" placeholder="" style="width: 70px;float: left;"><span style=" display: inline-block;position: relative; left: 10px ;top:6px">共<i id="allpages"><?php echo ($vos[1]); ?></i>页</span>
-										<button type="" class="btn btn-info gopage" style="float: right;">跳转</button>
-									</div>
-									<!-- <p style="position: absolute;left:190px;bottom:30px"></p> -->
-									<div class="btn-group col-md-2 col-sm-2 pagechange" role="group" aria-label="...">
-									  <button type="button" class="btn btn-default" id="gonext">
-									  	<span class="glyphicon glyphicon-forward" aria-hidden="true"></span>
-									  </button>
-									  <button type="button" class="btn btn-default" id="gonextx">
-									  	<span class="glyphicon glyphicon-fast-forward" aria-hidden="true"></span>
-									  </button>
-									</div>
-								</div>
+				                                    </tbody>
+				                                </table>
+				                            </div>
+				                                <div class="row pagediv" style="position: relative;">
+			                                	<div class="btn-group col-md-2 col-sm-2 pagechange" role="group" aria-label="..." style="width: 110px">
+												  <button type="button" class="btn btn-default" id="goprevx">
+												  	 <span class="glyphicon glyphicon-fast-backward" aria-hidden="true"></span>
+												  </button>
+												  <button type="button" class="btn btn-default" id="goprev">
+												  	 <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
+												  </button>
+												</div>
+												<div class="col-md-2 col-sm-2">
+<input type="tel" id="pagenums" data-page="<?php echo ($pages); ?>" name="" value="1" class="form-control" placeholder="" style="width: 70px" style="float: left;">
+<button type="" class="btn btn-info" id='gopage' style="float: right;position: relative; bottom: 34px;">跳转</button>
+</div>
+<p style="position: absolute;left:190px;bottom:30px">共<i id="allpages"><?php echo ($pages); ?></i>页</p>
+												<div class="btn-group col-md-2 col-sm-2 pagechange" role="group" aria-label="..." style="position: relative;left: 60px;">
+												  <button type="button" class="btn btn-default" id="gonext">
+												  	<span class="glyphicon glyphicon-forward" aria-hidden="true"></span>
+												  </button>
+												  <button type="button" class="btn btn-default" id="gonextx">
+												  	<span class="glyphicon glyphicon-fast-forward" aria-hidden="true"></span>
+												  </button>
+												</div>
+			                            	</div>
+		                                </div>
                             </div>
                         </div>
                     </div>
@@ -194,7 +225,7 @@
         </div>
         <script type="text/javascript">
         	window.onload=function(){
-        		new loadSource("/Public/qpht/assets/js/index.js");
+        		new loadSource("/Public/qpht/assets/js/convertgoods.js");
         	}
         </script>
 
@@ -215,15 +246,15 @@
     <!-- Metis Menu Js -->
     <script src="/Public/qpht/assets/js/jquery.metisMenu.js"></script>
     <!-- Morris Chart Js -->
-    <script src="/Public/qpht/assets/js/morris/raphael-2.1.0.min.js"></script>
-    <!-- <script src="/Public/qpht/assets/js/morris/morris.js"></script> -->
+    <!-- <script src="/Public/qpht/assets/js/morris/raphael-2.1.0.min.js"></script>
+    <script src="/Public/qpht/assets/js/morris/morris.js"></script> -->
     
     
     <script src="/Public/qpht/assets/js/easypiechart.js"></script>
     <script src="/Public/qpht/assets/js/easypiechart-data.js"></script>
     
      <script src="/Public/qpht/assets/js/Lightweight-Chart/jquery.chart.js"></script>
-     <script src="/Public/qpht/assets/js/pubfunction.js?125456sdfs5serwda"></script>
+     <script src="/Public/qpht/assets/js/pubfunction.js?1254565serwda"></script>
     
     <!-- Custom Js -->
     <script src="/Public/qpht/assets/js/custom-scripts.js"></script>

@@ -48,8 +48,9 @@
 				                                            <th>结算金币</th>
 				                                            <th>金币消耗</th>
 				                                            <th>房费</th>
-				                                            <th>对局时长</th>
+				                                            <th>对局时间</th>
 				                                            <th>手机型号</th>
+				                                        </tr>
 				                                    </thead>
 				                                    <tbody id="table_main" class="table_main">
 				                                    	<volist name="resdata" id='vos' key="k">
@@ -69,14 +70,14 @@
 				                                            <td class="center">{$vos.change_gold}</td>
 				                                            <td class="center">{$vos.last_gold}</td>
 				                                            <td class="center">配置</td>
-				                                            <td class="center">...</td>
+				                                            <td class="center">{$vos.change_time}</td>
 				                                            <td class="center">...</td>
 				                                        </tr>
 				                                    </volist>
 				                                    </tbody>
 				                                </table>
 				                            </div>
-				                                <div class="row pagediv" style="position: relative;">
+				                            <!-- <div class="row pagediv" style="position: relative;">
 			                                	<div class="btn-group col-md-2 col-sm-2 pagechange" role="group" aria-label="..." style="width: 110px">
 												  <button type="button" class="btn btn-default" id="goprevx">
 												  	 <span class="glyphicon glyphicon-fast-backward" aria-hidden="true"></span>
@@ -84,16 +85,9 @@
 												  <button type="button" class="btn btn-default" id="goprev">
 												  	 <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
 												  </button>
-												</div>
-				                                <div class="col-md-1 col-sm-1" style="width: 90px">
-				                                	<select class="form-control" id="pagenums" data-page="{$pages}">
-													  <for start="0" end="$pages"  step="1">
-													  	<option value="{$i+1}"><a href="javascript:void(0)">{$i+1}</a></option>
- 														</for>
-													</select>
-				                                </div>
-												<p style="position: absolute;left:190px;bottom:-5px">共<i id="allpages">{$pages}</i>页</p>
-												<div class="btn-group col-md-2 col-sm-2 pagechange" role="group" aria-label="..." style="position: relative;left: 60px;">
+												</div> -->
+												<include file="Public/page" />
+												<!-- <div class="btn-group col-md-2 col-sm-2 pagechange" role="group" aria-label="...">
 												  <button type="button" class="btn btn-default" id="gonext">
 												  	<span class="glyphicon glyphicon-forward" aria-hidden="true"></span>
 												  </button>
@@ -101,7 +95,7 @@
 												  	<span class="glyphicon glyphicon-fast-forward" aria-hidden="true"></span>
 												  </button>
 												</div>
-			                            	</div>
+			                            	</div> -->
 		                                </div>
                             	
                             </div>

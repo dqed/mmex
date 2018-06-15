@@ -21,7 +21,10 @@ class PlayerinfoModel extends BaseplayinfoModel {
 		$res1=$this->where($map)->field("create_time,count('userid')")->GROUP("DATE_FORMAT(create_time,'%Y-%m-%d')")->select();
 		$dayArr=array();
 		$days=diffBetweenTwoDays($conds['beftime'],$conds['endtime']);
-		for ($i=1; $i <=($days) ; $i++) {
+		if($days>0&&$days<1){
+			$days=1;
+		}
+		for ($i=1; $i <($days+1) ; $i++) {
 			$temp=date_sub(date_create($conds['endtime']),date_interval_create_from_date_string($i." days"));
 			$maps["DATE_FORMAT(create_time,'%Y-%m-%d')"]=date_format($temp,'Y-m-d');
 			$res2=$this->where($maps)->field('userid')->select();
@@ -36,7 +39,7 @@ class PlayerinfoModel extends BaseplayinfoModel {
 			if($cond['playid']!='null'&&$cond['playid']!=''){
 				$map['tbl_playerinfo.userid']=$cond['playid'];
 			}
-			if($cond['bgtime']!='null'&&$cond['entime']!='null'){
+			if($cond['bgtime']!='null'&&$cond['entime']!='null'&&$cond['bgtime']!=0&&$cond['entime']!=0){
 				$map['tbl_playerinfo.create_time']=array('between',array($cond['bgtime'],$cond['entime']));
 			}
 			if($cond['nickname']!='null'&&$cond['playid']!=''){
@@ -54,7 +57,7 @@ class PlayerinfoModel extends BaseplayinfoModel {
             $str= "ID,昵称,登录方式,平台,性别,创建时间,最后登录时间,金币,钻石,福卡, 兑换劵,游戏局数,初级场,中级场,高级场";  
             $exl11= explode(',',$str);
             foreach ($pp as $kkk => $vvv) {  
-                $rs[$kkk] = $this->join('tbl_account ON tbl_playerinfo.userid = tbl_account.userid')->where($map)->page($vvv.', 10000')->field("tbl_playerinfo.userid,nickname,sex,gold,tbl_playerinfo.create_time,convert_tick,diamond,luck_tick,channel,login_time,ip,platform")->select();
+                $rs[$kkk] = $this->join('tbl_account ON tbl_playerinfo.userid = tbl_account.userid')->where($map)->page($vvv.', 10000')->field("tbl_playerinfo.userid,nickname,sex,gold,tbl_account.create_time,convert_tick,diamond,luck_tick,channel,last_update,ip,platform")->select();
 				foreach ($rs[$kkk] as $key => $value){
 					array_push($tempid, $value['userid']);
 				}
@@ -103,22 +106,22 @@ class PlayerinfoModel extends BaseplayinfoModel {
                     if (!$v['nickname']) $v['nickname']                 = '暂无数据';  
                     if (!$v['sex']) $v['sex']             = '暂无数据';  
                     if (!$v['gold']) $v['gold']                 = '0';  
-                    if (!$v['create_time']) $v['create_time']   = '暂无数据';  
+                    if (!$v['create_time']) $v['create_time']   = '暂无数据';
+                    if (!$v['last_update']) $v['last_update']   = '暂无数据';  
                     if (!$v['convert_tick']) $v['convert_tick']   = '0';  
                     if (!$v['diamond']) $v['diamond']   = '0';  
                     if (!$v['luck_tick']) $v['luck_tick']   = '0';  
                     if (!$v['channel']) $v['channel']   = '暂无数据';  
-                    if (!$v['ip']) $v['ip']   = '暂无数据';  
                     if (!$v['platform']) $v['platform']   = '暂无数据';  
                     if (!$v['r1']) $v['r1']   = '0';  
                     if (!$v['r2']) $v['r2']   = '0';  
                     if (!$v['r3']) $v['r3']   = '0';  
-                    if (!$v['rall']) $v['rall']   = '0';  
+                    if (!$v['rall']) $v['rall'] = '0';  
                     $exl[$kkk][] = array(  
-                        $v['userid'],$v['nickname'],$v['channel'],$v['platform'],$v['sex'],$v['create_time'],$v['login_time'],$v['gold'],$v['diamond'],$v['luck_tick'],$v['convert_tick'],$v['rall'],$v['r1'],$v['r2'],$v['r3'],
+                        $v['userid'],$v['nickname'],$v['channel'],$v['platform'],$v['sex'],$v['create_time'],$v['last_update'],$v['gold'],$v['diamond'],$v['luck_tick'],$v['convert_tick'],$v['rall'],$v['r1'],$v['r2'],$v['r3']
                     );  
-                }  
-               exportToExcel('用户概况_'.time().$vvv.'.csv',$exl11,$exl[$kkk]);  
+                }
+                exportToExcel('用户概况_'.time().$vvv.'.csv',$exl11,$exl[$kkk]);
             }  
             exit();  
 	}

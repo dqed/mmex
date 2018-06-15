@@ -120,83 +120,151 @@
                 
     <div id="page-inner">                
             <div class="row">
-                <div class="col-md-12 col-sm-12">
+            	<div class="col-md-12">
+            		<button type="button" id="addbtn" class="btn btn-default" aria-label="Left Align" data-toggle="modal" data-target="#myModal">
+					  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+					</button>
+					<button type="button" class="btn btn-default" aria-label="Left Align" id="removebtn" laytype="user/accountRemove" data-target="#rementer">
+					  <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+					</button>
+					<button type="button" class="btn btn-default" aria-label="Left Align" id="editbtn" laytype="layaccount">
+					  <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+					</button>
+					
+					<!-- Modal -->
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					  <div class="modal-dialog" role="document">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					        <h4 class="modal-title" id="myModalLabel">新增账户</h4>
+					        <div class=".container-fluid">
+					        	<form class="form-horizontal" action="" method="post" id="addmenu" name="addmenu">
+					        	  <input type="hidden" name="actiontype" id="actiontype" value="1">
+					        	  <input type="hidden" name="roleidss" id="roleidss" value="">
+					        	  <input type="hidden" name="accountid" id="accountid" value=""> 
+								  <div class="form-group">
+								    <label for="inputEmail3" class="col-sm-3 control-label">账号：</label>
+								    <div class="col-sm-9">
+								      <input style="width: 70%" type="text" class="form-control" id="a_name" placeholder="账号" name="a_name">
+								    </div>
+								  </div>
+								  <div class="form-group">
+								    <label for="inputEmail3" class="col-sm-3 control-label">密码：</label>
+								    <div class="col-sm-9">
+								      <input style="width: 70%" type="text" class="form-control" id="a_pwd" placeholder="密码" name="a_pwd">
+								    </div>
+								  </div>
+								  <div class="form-group">
+								    <label for="inputEmail3" class="col-sm-3 control-label">所属角色：</label>
+								    <div class="col-sm-9">
+								    	<?php if(is_array($roleinfo)): foreach($roleinfo as $key=>$vo): ?><label class="checkbox-inline">
+												  <input type="checkbox" class="roles" id="roleinfo" value="<?php echo ($key); ?>" name="roles"> <?php echo ($vo); ?>
+											  </label><?php endforeach; endif; ?>
+								    </div>
+								  </div>	
+								  <div class="form-group">
+								  	<label for="inputEmail3" class="col-sm-3 control-label">是否为开发者：</label>
+								    <label class="radio-inline">
+										  <input type="radio" name="is_dev" id="isdev1" class="isdev" value="1"> 是
+										</label>
+										<label class="radio-inline">
+										  <input checked="checked" type="radio" name="is_dev" id="isdev2" class="isdev" value="2"> 否
+										</label>
+								  </div>
+								  <div class="form-group" id="partners" style="display: none;">
+								    <label for="inputEmail3" class="col-sm-3 control-label">合作方id：</label>
+								    <div class="col-sm-9">
+								      <input style="width: 70%" type="text" class="form-control" id="a_partnersid" placeholder="合作方id" name="a_partnersid">
+								    </div>
+								  </div>
+								  <div class="form-group" id="ismenu">
+								  	 <label for="inputEmail3" class="col-sm-3 control-label">状态：</label>
+								  	 <div class="col-sm-5">
+								  	 	<select class="form-control" name="a_state" id="a_state">
+								  	 	  	<option value="1">启用</option>
+								  	 	  	<option value="0">禁用</option>
+										</select>
+								  	 </div>
+								  </div>
+								  <div class="form-group">
+								  	<label for="inputEmail3" class="col-sm-3 control-label">备注：</label>
+								  	<div class="col-sm-10 col-sm-offset-3">
+								    	<textarea class="form-control" name="a_des" id="a_des" rows="3" style="width: 80%"></textarea>
+									</div>
+								  </div>
+								</form>
+					        </div>
+					      </div>
+					      <div class="modal-footer">
+					        <button type="button" class="btn btn-default" data-dismiss="modal" id="modalclose">取消</button>
+					        <button type="button" class="btn btn-primary" id="accountbtn" data-dismiss="modal" formid="addmenu">保存</button>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+					<!-- Modal -->
+            	</div>
+                <div class="col-md-12">
+                    <!-- Advanced Tables -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            游戏概览
+                           账户管理
                         </div>
                         <div class="panel-body">
-                            <ul class="nav nav-tabs" role="tablist">
-                            	<?php if(is_array($gameinfo)): $i = 0; $__LIST__ = $gameinfo;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i; if(($vo["id"] == 1)): ?><li class="active" role="presentation"><a href="#my-table<?php echo ($vo["id"]); ?>" role="tab" data-toggle="tab" aria-controls="my-table<?php echo ($vo["id"]); ?>" data-gameid=<?php echo ($vo["id"]); ?>><?php echo ($vo["gamename"]); ?></a>
-	                                <?php else: ?>
-	                                	<li role="presentation"><a href="#my-table<?php echo ($vo["id"]); ?>" data-toggle="tab" aria-controls="my-table<?php echo ($vo["id"]); ?>" role="tab" data-gameid=<?php echo ($vo["id"]); ?>><?php echo ($vo["gamename"]); ?></a><?php endif; endforeach; endif; else: echo "" ;endif; ?>
-                            </ul>
-                            <div class="tab-content">
-                               <?php if(is_array($lres)): $i = 0; $__LIST__ = $lres;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vos): $mod = ($i % 2 );++$i; if(($key == 1)): ?><div class="tab-pane active" id="my-table<?php echo ($key); ?>" role="tabpanel">
-                               	 	<?php else: ?>
-                            			<div class="tab-pane" id="my-table<?php echo ($key); ?>" role="tabpanel"><?php endif; ?>
-                                    <div class="table-responsive">
-			                                <table class="table table-striped table-bordered table-hover">
-			                                    <thead>
-			                                        <tr>
-			                                            <th>日期</th>
-			                                            <th>新增</th>
-			                                            <th>次留</th>
-			                                            <th>总活跃</th>
-			                                            <th>总对局</th>
-			                                            <th>平均对局</th>
-			                                    </thead>
-		                             			<tbody class="table_main">
-			                                    	<?php if(is_array($vos[2])): $i = 0; $__LIST__ = $vos[2];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vort): $mod = ($i % 2 );++$i;?><tr class="odd gradeX">
-				                                            <td class="center">
-				                                            		<?php echo ($vort["countime"]); ?>
-				                                            </td>
-				                                            <td class="center"><?php echo ($vort["newplayer"]); ?></td>
-				                                            <td class="center">
-																	<?php echo ($vort["oldplayer"]); ?> / <?php echo ($vort["oldx"]); ?>
-				                                            </td>
-				                                            <td class="center"><?php echo ($vort["activeplayer"]); ?></td>
-				                                            <td class="center"><?php echo ($vort["allplay"]); ?></td>
-				                                            <td class="center"><?php echo ($vort["aveplay"]); ?></td>
-				                                        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
-			                                    </tbody>
-			                                </table>
-		                            </div>
-                            	</div><?php endforeach; endif; else: echo "" ;endif; ?>
-		                       <div class="row pagediv" style="position: relative;">
-                                	<div class="btn-group col-md-2 col-sm-2 pagechange" role="group" aria-label="..." style="width: 110px">
-									  <button type="button" class="btn btn-default" id="goprevx">
-									  	 <span class="glyphicon glyphicon-fast-backward" aria-hidden="true"></span>
-									  </button>
-									  <button type="button" class="btn btn-default" id="goprev">
-									  	 <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
-									  </button>
-									</div>
-	                                <div style="float: left; width: 200px;">
-										<input type="tel" id="pagenums" data-page="<?php echo ($vos[1]); ?>" name="" value="1" class="form-control" placeholder="" style="width: 70px;float: left;"><span style=" display: inline-block;position: relative; left: 10px ;top:6px">共<i id="allpages"><?php echo ($vos[1]); ?></i>页</span>
-										<button type="" class="btn btn-info gopage" style="float: right;">跳转</button>
-									</div>
-									<!-- <p style="position: absolute;left:190px;bottom:30px"></p> -->
-									<div class="btn-group col-md-2 col-sm-2 pagechange" role="group" aria-label="...">
-									  <button type="button" class="btn btn-default" id="gonext">
-									  	<span class="glyphicon glyphicon-forward" aria-hidden="true"></span>
-									  </button>
-									  <button type="button" class="btn btn-default" id="gonextx">
-									  	<span class="glyphicon glyphicon-fast-forward" aria-hidden="true"></span>
-									  </button>
-									</div>
-								</div>
-                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                    <thead>
+                                        <tr>
+                                            <th>账号</th>
+                                            <th>昵称</th>
+                                            <th>状态</th>
+                                            <th>备注</th>
+                                            <th>所属用户组</th>
+                                            <th>更新时间</th>
+                                    </thead>
+                                    <tbody>
+                                		<?php if(is_array($accountlist)): $i = 0; $__LIST__ = $accountlist;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$account): $mod = ($i % 2 );++$i;?><tr class="odd gradeX">
+		                                            <td>
+		                                            		<label>
+		                                            			<input type="checkbox" class="selcheck" value="<?php echo ($account["id"]); ?>">
+		                                            		</label>
+		                                            		<?php echo ($account["accountname"]); ?>
+		                                            </td>
+		                                            <td class="center"><?php echo ($account["accountsecond"]); ?></td>
+		                                            <td class="center">
+															<?php if($account["state"] == 1 ): ?>启用
+															    <?php else: ?> 禁用<?php endif; ?>
+		                                            </td>
+		                                            <td class="center"><?php echo ($account["remarks"]); ?></td>
+		                                            <td class="center"><?php echo ($account["roleids"]); ?></td>
+		                                            <td class="center"><?php echo ($account["uptime"]); ?></td>
+		                                        </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+                                    </tbody>
+                                </table>
+                                <p><?php echo ($page); ?></p>
+                            </div>   
                         </div>
                     </div>
+                    <!--End Advanced Tables -->
                 </div>
             </div>
         </div>
-        <script type="text/javascript">
-        	window.onload=function(){
-        		new loadSource("/Public/qpht/assets/js/index.js");
-        	}
-        </script>
+        <div class="modal fade" tabindex="-1" role="dialog" id="rementer">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		      </div>
+		      <div class="modal-body">
+		        <p>确定删除么？</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-primary" data-dismiss="modal">NO</button>
+		        <button type="button" class="btn btn-default" id="removeenterbtn">YES</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 
             </div>
             <!-- /. PAGE INNER  -->

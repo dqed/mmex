@@ -23,37 +23,14 @@ var pubFun=(function($){
 				page:1,
 			};
 	var fynum=20;
-	// var getexcel=function(){
-	// 	$('#getexclbtn').on('click',function(){
-	// 		var url="/qpht.php/gamemanage/getexcelplus?"+"gameid="+dataobj.gameid+"&playid="+dataobj.playid+"&playertype="+dataobj.playertype+"&module="+dataobj.module+"&nickname="+dataobj.nickname+"&bgtime="+dataobj.bgtime+"&entime="+dataobj.entime+"&phone="+dataobj.phone;
-	// 		console.log(url);
-	// 		window.open(url);
-	// 		return false; 
-	// 		$.ajax({
-	// 		    type: "post",
-	// 		    data: dataobj,
-	// 		    url: "/qpht.php/gamemanage/getexcel",
-	// 		    beforeSend: function () {
-	// 		        // 禁用按钮防止重复提交，发送前响应
-	// 		        pubFun.showloading();
-	// 		    },
-	// 		    success: function (data) {
-	// 		        	//console.log(data);
-	// 		            pubFun.hideloading();
-	// 		            var $eleForm = $("<form method='get'></form>");
-	// 		            $eleForm.attr("action",data.url);
-	// 		            $(document.body).append($eleForm);
-	// 		            $eleForm.submit(); 
-	// 		    },
-	// 		    complete: function () {//完成响应
-			         
-	// 		    },
-	// 		    error: function (data) {
-	// 		        console.info("error: " + data.responseText);
-	// 		    }
-	// 		});
-	// 	})
-	// }
+	var getexcel=function(){
+		$('#getexclbtn').on('click',function(){
+			var url="/qpht.php/gamemanage/getexcelplus?"+"gameid="+dataobj.gameid+"&playid="+dataobj.playid+"&playertype="+dataobj.playertype+"&module="+dataobj.module+"&nickname="+dataobj.nickname+"&bgtime="+dataobj.bgtime+"&entime="+dataobj.entime+"&phone="+dataobj.phone;
+			console.log(url);
+			window.open(url);
+			return false; 
+		})
+	}
 	var initLoading = function(){
 	    $("body").append("<!-- loading -->" +
 	            "<div class='modal fade' id='loading' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' data-backdrop='static'>" +
@@ -154,7 +131,7 @@ var pubFun=(function($){
 			case '1':
 			    return "血流麻将";
 			case '2':
-				return "四人斗地主";
+				return "斗地主";
 			default:
 				console.log('c');
 		}
@@ -351,6 +328,33 @@ var pubFun=(function($){
 			pageaction();
 		})
 	}
+	var getWeekDay=function(day){
+		var nowdata=new Date();
+		var dayarray= new Array();
+		for (var i = 0; i < Math.abs(day); i++) {
+			if(day<0){
+				var d2=nowdata.getTime()-i*(3600*1000*24);
+			}else{
+				var d2=nowdata.getTime()+i*(3600*1000*24);
+			}
+			var tempdate=new Date();
+				tempdate.setTime(d2)
+			var tyear=tempdate.getFullYear();
+			var tmonth=tempdate.getMonth();
+			var tday=tempdate.getDate();
+			if(tday<10){
+				tday='0'+tday;
+			}
+			if((tmonth+1)<10){
+				tmonth='0'+(tmonth+1);
+			}else{
+				tmonth=tmonth+1;
+			}
+			var tempc=tyear+'-'+tmonth+'-'+tday;
+			dayarray.push(tempc);
+		}
+		return dayarray
+	}
 	//end
 	//js时间格式化函数
 	editpub();
@@ -361,7 +365,7 @@ var pubFun=(function($){
 	pubaction();
 	outsystem();
 	initLoading();
-	// getexcel();
+	getexcel();
 	return {
 		messagewarn:messagewarn,
 		fynum:fynum,
@@ -373,5 +377,6 @@ var pubFun=(function($){
 		dataobj1:dataobj1,
 		timeCheck:timeCheck,
 		pageaction:pageaction,
+		getWeekDay:getWeekDay,
 	}
 })($);

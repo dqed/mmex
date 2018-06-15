@@ -1,0 +1,1787 @@
+[ 2018-06-05T19:42:18+08:00 ] ::1 /qpht.php/gamemanage/gamemanlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `qp_role` [ RunTime:0.0080s ]
+SQL: SELECT `jurisdiction` FROM `qp_role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `qp_module` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `qp_menu` [ RunTime:0.0060s ]
+SQL: SELECT `id` FROM `qp_menu` WHERE `menurl` = '/gamemanage/gamemanlist' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_module` ORDER BY sortnum LIMIT 10   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_menu` LIMIT 50   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( state=1 )  [ RunTime:0.0010s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: playid C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 28 行.
+NOTIC: [8] Undefined index: playertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 31 行.
+NOTIC: [8] Undefined index: playertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: bgtime C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 36 行.
+NOTIC: [8] Undefined index: nickname C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 39 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` LIMIT 1   [ RunTime:0.0050s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 44 行.
+NOTIC: [8] Undefined index: ordertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 48 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0230s ]
+SQL: SELECT user_id,count(if(room_id=1201,true,null)) AS r1,count(if(room_id=1202,true,null)) AS r2,count(if(room_id=1203,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28331,28330,28329,28328,28327,28326,28325,28324,28323,28322,28321,28320,28319,28318,28317,28316,28315,28314,28313,28312) GROUP BY user_id [ RunTime:0.0040s ]
+NOTIC: [8] Undefined offset: 28328 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28320 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28314 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined variable: yday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 45 行.
+NOTIC: [8] Undefined variable: tday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 46 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: actions C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 116 行.
+NOTIC: [8] Undefined variable: resdata C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 151 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-06-05T19:42:23+08:00 ] ::1 /qpht.php/gamemanage/seachdata
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant ORDER_LIST - assumed 'ORDER_LIST' C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0060s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` WHERE tbl_playerinfo.create_time BETWEEN '2018-06-01' AND '2018-06-02 23:59:59' LIMIT 1   [ RunTime:0.0050s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 44 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  WHERE tbl_playerinfo.create_time BETWEEN '2018-06-01' AND '2018-06-02 23:59:59' ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0110s ]
+SQL: SELECT user_id,count(if(room_id=1201,true,null)) AS r1,count(if(room_id=1202,true,null)) AS r2,count(if(room_id=1203,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28185,28184,28183,28182,28181,28180,28179,28178,28177,28176,28175,28174,28173,28171,28172,28170,28169,28168,28167,28166) GROUP BY user_id [ RunTime:0.0040s ]
+NOTIC: [8] Undefined offset: 28169 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28168 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28167 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28166 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+
+[ 2018-06-05T19:43:24+08:00 ] ::1 /qpht.php/gamemanage/gamemanlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `qp_role` [ RunTime:0.0060s ]
+SQL: SELECT `jurisdiction` FROM `qp_role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `qp_module` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `qp_menu` [ RunTime:0.0060s ]
+SQL: SELECT `id` FROM `qp_menu` WHERE `menurl` = '/gamemanage/gamemanlist' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_module` ORDER BY sortnum LIMIT 10   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_menu` LIMIT 50   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( state=1 )  [ RunTime:0.0000s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: playid C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 28 行.
+NOTIC: [8] Undefined index: playertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 31 行.
+NOTIC: [8] Undefined index: playertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: bgtime C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 36 行.
+NOTIC: [8] Undefined index: nickname C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 39 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` LIMIT 1   [ RunTime:0.0040s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 44 行.
+NOTIC: [8] Undefined index: ordertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 48 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0210s ]
+SQL: SELECT user_id,count(if(room_id=1201,true,null)) AS r1,count(if(room_id=1202,true,null)) AS r2,count(if(room_id=1203,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28331,28330,28329,28328,28327,28326,28325,28324,28323,28322,28321,28320,28319,28318,28317,28316,28315,28314,28313,28312) GROUP BY user_id [ RunTime:0.0040s ]
+NOTIC: [8] Undefined offset: 28328 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28320 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28314 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined variable: yday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 45 行.
+NOTIC: [8] Undefined variable: tday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 46 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: actions C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 116 行.
+NOTIC: [8] Undefined variable: resdata C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 151 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-06-05T19:43:31+08:00 ] ::1 /qpht.php/gamemanage/seachdata
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant ORDER_LIST - assumed 'ORDER_LIST' C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0100s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0230s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` WHERE tbl_playerinfo.create_time BETWEEN '2018-06-01' AND '2018-06-02 23:59:59' LIMIT 1   [ RunTime:0.0090s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 44 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  WHERE tbl_playerinfo.create_time BETWEEN '2018-06-01' AND '2018-06-02 23:59:59' ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0160s ]
+SQL: SELECT user_id,count(if(room_id=1201,true,null)) AS r1,count(if(room_id=1202,true,null)) AS r2,count(if(room_id=1203,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28185,28184,28183,28182,28181,28180,28179,28178,28177,28176,28175,28174,28173,28171,28172,28170,28169,28168,28167,28166) GROUP BY user_id [ RunTime:0.0050s ]
+NOTIC: [8] Undefined offset: 28169 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28168 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28167 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28166 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+
+[ 2018-06-05T19:43:58+08:00 ] ::1 /qpht.php/gamemanage/gamemanlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000500s ]
+SQL: SHOW COLUMNS FROM `qp_role` [ RunTime:0.0065s ]
+SQL: SELECT `jurisdiction` FROM `qp_role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `qp_module` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `qp_menu` [ RunTime:0.0060s ]
+SQL: SELECT `id` FROM `qp_menu` WHERE `menurl` = '/gamemanage/gamemanlist' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_module` ORDER BY sortnum LIMIT 10   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_menu` LIMIT 50   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( state=1 )  [ RunTime:0.0010s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: playid C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 28 行.
+NOTIC: [8] Undefined index: playertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 31 行.
+NOTIC: [8] Undefined index: playertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: bgtime C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 36 行.
+NOTIC: [8] Undefined index: nickname C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 39 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` LIMIT 1   [ RunTime:0.0100s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 44 行.
+NOTIC: [8] Undefined index: ordertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 48 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0390s ]
+SQL: SELECT user_id,count(if(room_id=1201,true,null)) AS r1,count(if(room_id=1202,true,null)) AS r2,count(if(room_id=1203,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28331,28330,28329,28328,28327,28326,28325,28324,28323,28322,28321,28320,28319,28318,28317,28316,28315,28314,28313,28312) GROUP BY user_id [ RunTime:0.0050s ]
+NOTIC: [8] Undefined offset: 28328 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28320 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28314 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined variable: yday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 45 行.
+NOTIC: [8] Undefined variable: tday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 46 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: actions C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 116 行.
+NOTIC: [8] Undefined variable: resdata C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 151 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-06-05T19:44:02+08:00 ] ::1 /qpht.php/gamemanage/seachdata
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant ORDER_LIST - assumed 'ORDER_LIST' C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0080s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0200s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` WHERE tbl_playerinfo.create_time BETWEEN '2018-06-01' AND '2018-06-02 23:59:59' LIMIT 1   [ RunTime:0.0100s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 44 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  WHERE tbl_playerinfo.create_time BETWEEN '2018-06-01' AND '2018-06-02 23:59:59' ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0160s ]
+SQL: SELECT user_id,count(if(room_id=1201,true,null)) AS r1,count(if(room_id=1202,true,null)) AS r2,count(if(room_id=1203,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28185,28184,28183,28182,28181,28180,28179,28178,28177,28176,28175,28174,28173,28171,28172,28170,28169,28168,28167,28166) GROUP BY user_id [ RunTime:0.0050s ]
+NOTIC: [8] Undefined offset: 28169 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28168 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28167 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28166 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+
+[ 2018-06-05T19:44:39+08:00 ] ::1 /qpht.php/gamemanage/gamemanlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `qp_role` [ RunTime:0.0080s ]
+SQL: SELECT `jurisdiction` FROM `qp_role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `qp_module` [ RunTime:0.0075s ]
+SQL: SHOW COLUMNS FROM `qp_menu` [ RunTime:0.0060s ]
+SQL: SELECT `id` FROM `qp_menu` WHERE `menurl` = '/gamemanage/gamemanlist' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_module` ORDER BY sortnum LIMIT 10   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_menu` LIMIT 50   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( state=1 )  [ RunTime:0.0000s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: playid C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 28 行.
+NOTIC: [8] Undefined index: playertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 31 行.
+NOTIC: [8] Undefined index: playertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: bgtime C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 36 行.
+NOTIC: [8] Undefined index: nickname C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 39 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` LIMIT 1   [ RunTime:0.0070s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 44 行.
+NOTIC: [8] Undefined index: ordertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 48 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0330s ]
+SQL: SELECT user_id,count(if(room_id=1201,true,null)) AS r1,count(if(room_id=1202,true,null)) AS r2,count(if(room_id=1203,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28331,28330,28329,28328,28327,28326,28325,28324,28323,28322,28321,28320,28319,28318,28317,28316,28315,28314,28313,28312) GROUP BY user_id [ RunTime:0.0040s ]
+NOTIC: [8] Undefined offset: 28328 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28320 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28314 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined variable: yday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 45 行.
+NOTIC: [8] Undefined variable: tday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 46 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: actions C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 116 行.
+NOTIC: [8] Undefined variable: resdata C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 151 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-06-05T19:44:43+08:00 ] ::1 /qpht.php/gamemanage/seachdata
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant ORDER_LIST - assumed 'ORDER_LIST' C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0080s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` WHERE tbl_playerinfo.create_time BETWEEN '2018-06-01' AND '2018-06-02 23:59:59' LIMIT 1   [ RunTime:0.0060s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 44 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  WHERE tbl_playerinfo.create_time BETWEEN '2018-06-01' AND '2018-06-02 23:59:59' ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0100s ]
+SQL: SELECT user_id,count(if(room_id=1201,true,null)) AS r1,count(if(room_id=1202,true,null)) AS r2,count(if(room_id=1203,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28185,28184,28183,28182,28181,28180,28179,28178,28177,28176,28175,28174,28173,28171,28172,28170,28169,28168,28167,28166) GROUP BY user_id [ RunTime:0.0040s ]
+NOTIC: [8] Undefined offset: 28169 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28168 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28167 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28166 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+
+[ 2018-06-05T19:46:14+08:00 ] ::1 /qpht.php/gamemanage/gamemanlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `qp_role` [ RunTime:0.0070s ]
+SQL: SELECT `jurisdiction` FROM `qp_role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `qp_module` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `qp_menu` [ RunTime:0.0070s ]
+SQL: SELECT `id` FROM `qp_menu` WHERE `menurl` = '/gamemanage/gamemanlist' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_module` ORDER BY sortnum LIMIT 10   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_menu` LIMIT 50   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( state=1 )  [ RunTime:0.0000s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: playid C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 28 行.
+NOTIC: [8] Undefined index: playertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 31 行.
+NOTIC: [8] Undefined index: playertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: bgtime C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 36 行.
+NOTIC: [8] Undefined index: nickname C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 39 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` LIMIT 1   [ RunTime:0.0090s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 44 行.
+NOTIC: [8] Undefined index: ordertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 48 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0350s ]
+SQL: SELECT user_id,count(if(room_id=1201,true,null)) AS r1,count(if(room_id=1202,true,null)) AS r2,count(if(room_id=1203,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28331,28330,28329,28328,28327,28326,28325,28324,28323,28322,28321,28320,28319,28318,28317,28316,28315,28314,28313,28312) GROUP BY user_id [ RunTime:0.0050s ]
+NOTIC: [8] Undefined offset: 28328 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28320 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28314 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined variable: yday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 45 行.
+NOTIC: [8] Undefined variable: tday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 46 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: actions C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 116 行.
+NOTIC: [8] Undefined variable: resdata C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 151 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-06-05T19:46:19+08:00 ] ::1 /qpht.php/gamemanage/seachdata
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant ORDER_LIST - assumed 'ORDER_LIST' C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0090s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` WHERE tbl_playerinfo.create_time BETWEEN '2018-06-01' AND '2018-06-02 23:59:59' LIMIT 1   [ RunTime:0.0050s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 44 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  WHERE tbl_playerinfo.create_time BETWEEN '2018-06-01' AND '2018-06-02 23:59:59' ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0100s ]
+SQL: SELECT user_id,count(if(room_id=1201,true,null)) AS r1,count(if(room_id=1202,true,null)) AS r2,count(if(room_id=1203,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28185,28184,28183,28182,28181,28180,28179,28178,28177,28176,28175,28174,28173,28171,28172,28170,28169,28168,28167,28166) GROUP BY user_id [ RunTime:0.0040s ]
+NOTIC: [8] Undefined offset: 28169 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28168 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28167 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28166 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+
+[ 2018-06-05T19:46:58+08:00 ] ::1 /qpht.php/gamemanage/gamemanlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `qp_role` [ RunTime:0.0060s ]
+SQL: SELECT `jurisdiction` FROM `qp_role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `qp_module` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `qp_menu` [ RunTime:0.0070s ]
+SQL: SELECT `id` FROM `qp_menu` WHERE `menurl` = '/gamemanage/gamemanlist' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_module` ORDER BY sortnum LIMIT 10   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_menu` LIMIT 50   [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( state=1 )  [ RunTime:0.0000s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: playid C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 28 行.
+NOTIC: [8] Undefined index: playertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 31 行.
+NOTIC: [8] Undefined index: playertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: bgtime C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 36 行.
+NOTIC: [8] Undefined index: nickname C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 39 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` LIMIT 1   [ RunTime:0.0060s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 44 行.
+NOTIC: [8] Undefined index: ordertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 48 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0250s ]
+SQL: SELECT user_id,count(if(room_id=1201,true,null)) AS r1,count(if(room_id=1202,true,null)) AS r2,count(if(room_id=1203,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28331,28330,28329,28328,28327,28326,28325,28324,28323,28322,28321,28320,28319,28318,28317,28316,28315,28314,28313,28312) GROUP BY user_id [ RunTime:0.0030s ]
+NOTIC: [8] Undefined offset: 28328 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28320 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28314 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined variable: yday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 45 行.
+NOTIC: [8] Undefined variable: tday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 46 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: actions C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 116 行.
+NOTIC: [8] Undefined variable: resdata C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 151 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-06-05T19:47:11+08:00 ] ::1 /qpht.php/gamemanage/gamemanlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `qp_role` [ RunTime:0.0080s ]
+SQL: SELECT `jurisdiction` FROM `qp_role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `qp_module` [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `qp_menu` [ RunTime:0.0080s ]
+SQL: SELECT `id` FROM `qp_menu` WHERE `menurl` = '/gamemanage/gamemanlist' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_module` ORDER BY sortnum LIMIT 10   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_menu` LIMIT 50   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( state=1 )  [ RunTime:0.0010s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0330s ]
+NOTIC: [8] Undefined index: playid C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 28 行.
+NOTIC: [8] Undefined index: playertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 31 行.
+NOTIC: [8] Undefined index: playertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: bgtime C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 36 行.
+NOTIC: [8] Undefined index: nickname C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 39 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` LIMIT 1   [ RunTime:0.0060s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 44 行.
+NOTIC: [8] Undefined index: ordertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 48 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0230s ]
+SQL: SELECT user_id,count(if(room_id=1201,true,null)) AS r1,count(if(room_id=1202,true,null)) AS r2,count(if(room_id=1203,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28331,28330,28329,28328,28327,28326,28325,28324,28323,28322,28321,28320,28319,28318,28317,28316,28315,28314,28313,28312) GROUP BY user_id [ RunTime:0.0040s ]
+NOTIC: [8] Undefined offset: 28328 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28320 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28314 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined variable: yday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 45 行.
+NOTIC: [8] Undefined variable: tday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 46 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: actions C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 116 行.
+NOTIC: [8] Undefined variable: resdata C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 151 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-06-05T19:47:24+08:00 ] ::1 /qpht.php/gamemanage/gamemanlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `qp_role` [ RunTime:0.0080s ]
+SQL: SELECT `jurisdiction` FROM `qp_role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `qp_module` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `qp_menu` [ RunTime:0.0070s ]
+SQL: SELECT `id` FROM `qp_menu` WHERE `menurl` = '/gamemanage/gamemanlist' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_module` ORDER BY sortnum LIMIT 10   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_menu` LIMIT 50   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( state=1 )  [ RunTime:0.0000s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: playid C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 28 行.
+NOTIC: [8] Undefined index: playertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 31 行.
+NOTIC: [8] Undefined index: playertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: bgtime C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 36 行.
+NOTIC: [8] Undefined index: nickname C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 39 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` LIMIT 1   [ RunTime:0.0040s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 44 行.
+NOTIC: [8] Undefined index: ordertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 48 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0220s ]
+SQL: SELECT user_id,count(if(room_id=1201,true,null)) AS r1,count(if(room_id=1202,true,null)) AS r2,count(if(room_id=1203,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28331,28330,28329,28328,28327,28326,28325,28324,28323,28322,28321,28320,28319,28318,28317,28316,28315,28314,28313,28312) GROUP BY user_id [ RunTime:0.0040s ]
+NOTIC: [8] Undefined offset: 28328 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28320 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28314 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined variable: yday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 45 行.
+NOTIC: [8] Undefined variable: tday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 46 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: actions C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 116 行.
+NOTIC: [8] Undefined variable: resdata C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 151 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-06-05T19:47:30+08:00 ] ::1 /qpht.php/gamemanage/seachdata
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant ORDER_LIST - assumed 'ORDER_LIST' C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0080s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0050s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` WHERE tbl_playerinfo.create_time BETWEEN '2018-06-01' AND '2018-06-02 23:59:59' LIMIT 1   [ RunTime:0.0060s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 44 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  WHERE tbl_playerinfo.create_time BETWEEN '2018-06-01' AND '2018-06-02 23:59:59' ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0110s ]
+SQL: SELECT user_id,count(if(room_id=1201,true,null)) AS r1,count(if(room_id=1202,true,null)) AS r2,count(if(room_id=1203,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28185,28184,28183,28182,28181,28180,28179,28178,28177,28176,28175,28174,28173,28171,28172,28170,28169,28168,28167,28166) GROUP BY user_id [ RunTime:0.0030s ]
+NOTIC: [8] Undefined offset: 28169 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28168 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28167 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28166 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+
+[ 2018-06-05T19:47:54+08:00 ] ::1 /qpht.php/gamemanage/gamemanlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `qp_role` [ RunTime:0.0090s ]
+SQL: SELECT `jurisdiction` FROM `qp_role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `qp_module` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `qp_menu` [ RunTime:0.0080s ]
+SQL: SELECT `id` FROM `qp_menu` WHERE `menurl` = '/gamemanage/gamemanlist' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_module` ORDER BY sortnum LIMIT 10   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_menu` LIMIT 50   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( state=1 )  [ RunTime:0.0010s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: playid C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 28 行.
+NOTIC: [8] Undefined index: playertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 31 行.
+NOTIC: [8] Undefined index: playertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: bgtime C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 36 行.
+NOTIC: [8] Undefined index: nickname C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 39 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` LIMIT 1   [ RunTime:0.0060s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 44 行.
+NOTIC: [8] Undefined index: ordertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 48 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0260s ]
+SQL: SELECT user_id,count(if(room_id=1201,true,null)) AS r1,count(if(room_id=1202,true,null)) AS r2,count(if(room_id=1203,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28331,28330,28329,28328,28327,28326,28325,28324,28323,28322,28321,28320,28319,28318,28317,28316,28315,28314,28313,28312) GROUP BY user_id [ RunTime:0.0040s ]
+NOTIC: [8] Undefined offset: 28328 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28320 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28314 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined variable: yday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 45 行.
+NOTIC: [8] Undefined variable: tday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 46 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: actions C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 116 行.
+NOTIC: [8] Undefined variable: resdata C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 151 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-06-05T19:47:59+08:00 ] ::1 /qpht.php/gamemanage/seachdata
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant ORDER_LIST - assumed 'ORDER_LIST' C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0090s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0140s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` WHERE tbl_playerinfo.create_time BETWEEN '2018-06-01' AND '2018-06-02 23:59:59' LIMIT 1   [ RunTime:0.0050s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 44 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  WHERE tbl_playerinfo.create_time BETWEEN '2018-06-01' AND '2018-06-02 23:59:59' ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0100s ]
+SQL: SELECT user_id,count(if(room_id=1201,true,null)) AS r1,count(if(room_id=1202,true,null)) AS r2,count(if(room_id=1203,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28185,28184,28183,28182,28181,28180,28179,28178,28177,28176,28175,28174,28173,28171,28172,28170,28169,28168,28167,28166) GROUP BY user_id [ RunTime:0.0030s ]
+NOTIC: [8] Undefined offset: 28169 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28168 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28167 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28166 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+
+[ 2018-06-05T19:50:14+08:00 ] ::1 /qpht.php/gamemanage/gamemanlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `qp_role` [ RunTime:0.0070s ]
+SQL: SELECT `jurisdiction` FROM `qp_role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `qp_module` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `qp_menu` [ RunTime:0.0060s ]
+SQL: SELECT `id` FROM `qp_menu` WHERE `menurl` = '/gamemanage/gamemanlist' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_module` ORDER BY sortnum LIMIT 10   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_menu` LIMIT 50   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( state=1 )  [ RunTime:0.0010s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: playid C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 28 行.
+NOTIC: [8] Undefined index: playertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 31 行.
+NOTIC: [8] Undefined index: playertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: bgtime C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 36 行.
+NOTIC: [8] Undefined index: nickname C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 39 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` LIMIT 1   [ RunTime:0.0120s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 44 行.
+NOTIC: [8] Undefined index: ordertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 48 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0520s ]
+SQL: SELECT user_id,count(if(room_id=1201,true,null)) AS r1,count(if(room_id=1202,true,null)) AS r2,count(if(room_id=1203,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28331,28330,28329,28328,28327,28326,28325,28324,28323,28322,28321,28320,28319,28318,28317,28316,28315,28314,28313,28312) GROUP BY user_id [ RunTime:0.0050s ]
+NOTIC: [8] Undefined offset: 28328 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28320 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28314 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined variable: yday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 45 行.
+NOTIC: [8] Undefined variable: tday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 46 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: actions C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 116 行.
+NOTIC: [8] Undefined variable: resdata C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 151 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-06-05T19:50:21+08:00 ] ::1 /qpht.php/gamemanage/seachdata
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant ORDER_LIST - assumed 'ORDER_LIST' C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0060s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` WHERE tbl_playerinfo.create_time BETWEEN '2018-06-01' AND '2018-06-02 23:59:59' LIMIT 1   [ RunTime:0.0160s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 44 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  WHERE tbl_playerinfo.create_time BETWEEN '2018-06-01' AND '2018-06-02 23:59:59' ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0230s ]
+SQL: SELECT user_id,count(if(room_id=1201,true,null)) AS r1,count(if(room_id=1202,true,null)) AS r2,count(if(room_id=1203,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28185,28184,28183,28182,28181,28180,28179,28178,28177,28176,28175,28174,28173,28171,28172,28170,28169,28168,28167,28166) GROUP BY user_id [ RunTime:0.0070s ]
+NOTIC: [8] Undefined offset: 28169 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28168 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28167 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28166 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+
+[ 2018-06-05T19:51:40+08:00 ] ::1 /qpht.php/gamemanage/playsinfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `qp_role` [ RunTime:0.0080s ]
+SQL: SELECT `jurisdiction` FROM `qp_role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `qp_module` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `qp_menu` [ RunTime:0.0060s ]
+SQL: SELECT `id` FROM `qp_menu` WHERE `menurl` = '/gamemanage/playsinfo' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_module` ORDER BY sortnum LIMIT 10   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_menu` LIMIT 50   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( state=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `table_game_change_gold` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: playid C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 120 行.
+NOTIC: [8] Undefined index: bgtime C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 123 行.
+SQL: SELECT COUNT(user_id) AS tp_count FROM `table_game_change_gold` LIMIT 1   [ RunTime:0.0070s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 127 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 128 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 132 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 132 行.
+SQL: SELECT * FROM `table_game_change_gold` LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=24046 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=24047 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=24050 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=72 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=24049 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=24044 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=24043 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=24052 [ RunTime:0.0000s ]
+SQL: select nickname from tbl_playerinfo where userid=24053 [ RunTime:0.0000s ]
+SQL: select nickname from tbl_playerinfo where userid=24054 [ RunTime:0.0000s ]
+SQL: select nickname from tbl_playerinfo where userid=24052 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=24055 [ RunTime:0.0000s ]
+SQL: select nickname from tbl_playerinfo where userid=66 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=24054 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=24052 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=24055 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=66 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=24063 [ RunTime:0.0020s ]
+SQL: select nickname from tbl_playerinfo where userid=24064 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=24065 [ RunTime:0.0000s ]
+SQL: SELECT `gamename` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+NOTIC: [8] Undefined variable: yday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 126 行.
+NOTIC: [8] Undefined variable: tday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 127 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: actions C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 116 行.
+NOTIC: [8] Undefined variable: userid C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 126 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-06-05T19:51:47+08:00 ] ::1 /qpht.php/gamemanage/gamemanlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `qp_role` [ RunTime:0.0070s ]
+SQL: SELECT `jurisdiction` FROM `qp_role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `qp_module` [ RunTime:0.0090s ]
+SQL: SHOW COLUMNS FROM `qp_menu` [ RunTime:0.0060s ]
+SQL: SELECT `id` FROM `qp_menu` WHERE `menurl` = '/gamemanage/gamemanlist' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_module` ORDER BY sortnum LIMIT 10   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_menu` LIMIT 50   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( state=1 )  [ RunTime:0.0010s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: playid C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 28 行.
+NOTIC: [8] Undefined index: playertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 31 行.
+NOTIC: [8] Undefined index: playertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: bgtime C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 36 行.
+NOTIC: [8] Undefined index: nickname C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 39 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` LIMIT 1   [ RunTime:0.0060s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 44 行.
+NOTIC: [8] Undefined index: ordertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 48 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0340s ]
+SQL: SELECT user_id,count(if(room_id=1201,true,null)) AS r1,count(if(room_id=1202,true,null)) AS r2,count(if(room_id=1203,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28331,28330,28329,28328,28327,28326,28325,28324,28323,28322,28321,28320,28319,28318,28317,28316,28315,28314,28313,28312) GROUP BY user_id [ RunTime:0.0050s ]
+NOTIC: [8] Undefined offset: 28328 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28320 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28314 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined variable: yday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 45 行.
+NOTIC: [8] Undefined variable: tday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 46 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: actions C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 116 行.
+NOTIC: [8] Undefined variable: resdata C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 151 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.030000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-06-05T19:51:52+08:00 ] ::1 /qpht.php/gamemanage/seachdata
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant ORDER_LIST - assumed 'ORDER_LIST' C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0070s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` WHERE tbl_playerinfo.create_time BETWEEN '2018-06-01' AND '2018-06-02 23:59:59' LIMIT 1   [ RunTime:0.0060s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 44 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  WHERE tbl_playerinfo.create_time BETWEEN '2018-06-01' AND '2018-06-02 23:59:59' ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0100s ]
+SQL: SELECT user_id,count(if(room_id=1201,true,null)) AS r1,count(if(room_id=1202,true,null)) AS r2,count(if(room_id=1203,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28185,28184,28183,28182,28181,28180,28179,28178,28177,28176,28175,28174,28173,28171,28172,28170,28169,28168,28167,28166) GROUP BY user_id [ RunTime:0.0040s ]
+NOTIC: [8] Undefined offset: 28169 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28168 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28167 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28166 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+
+[ 2018-06-05T19:53:06+08:00 ] ::1 /qpht.php/gamemanage/gamemanlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `qp_role` [ RunTime:0.0060s ]
+SQL: SELECT `jurisdiction` FROM `qp_role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `qp_module` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `qp_menu` [ RunTime:0.0070s ]
+SQL: SELECT `id` FROM `qp_menu` WHERE `menurl` = '/gamemanage/gamemanlist' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_module` ORDER BY sortnum LIMIT 10   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_menu` LIMIT 50   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( state=1 )  [ RunTime:0.0010s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: playid C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 28 行.
+NOTIC: [8] Undefined index: playertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 31 行.
+NOTIC: [8] Undefined index: playertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: bgtime C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 36 行.
+NOTIC: [8] Undefined index: nickname C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 39 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` LIMIT 1   [ RunTime:0.0050s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 44 行.
+NOTIC: [8] Undefined index: ordertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 48 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0230s ]
+SQL: SELECT user_id,count(if(room_id=1201,true,null)) AS r1,count(if(room_id=1202,true,null)) AS r2,count(if(room_id=1203,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28331,28330,28329,28328,28327,28326,28325,28324,28323,28322,28321,28320,28319,28318,28317,28316,28315,28314,28313,28312) GROUP BY user_id [ RunTime:0.0040s ]
+NOTIC: [8] Undefined offset: 28328 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28320 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28314 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined variable: yday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 45 行.
+NOTIC: [8] Undefined variable: tday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 46 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: actions C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 116 行.
+NOTIC: [8] Undefined variable: resdata C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 151 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.047000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-06-05T19:53:12+08:00 ] ::1 /qpht.php/gamemanage/seachdata
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant ORDER_LIST - assumed 'ORDER_LIST' C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0090s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0140s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` WHERE tbl_playerinfo.create_time BETWEEN '2018-06-01' AND '2018-06-02 23:59:59' LIMIT 1   [ RunTime:0.0080s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 44 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  WHERE tbl_playerinfo.create_time BETWEEN '2018-06-01' AND '2018-06-02 23:59:59' ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0110s ]
+SQL: SELECT user_id,count(if(room_id=1201,true,null)) AS r1,count(if(room_id=1202,true,null)) AS r2,count(if(room_id=1203,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28185,28184,28183,28182,28181,28180,28179,28178,28177,28176,28175,28174,28173,28171,28172,28170,28169,28168,28167,28166) GROUP BY user_id [ RunTime:0.0050s ]
+NOTIC: [8] Undefined offset: 28169 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28168 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28167 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28166 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+
+[ 2018-06-05T19:53:51+08:00 ] ::1 /qpht.php/gamemanage/convertgoods
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `qp_role` [ RunTime:0.0070s ]
+SQL: SELECT `jurisdiction` FROM `qp_role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `qp_module` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `qp_menu` [ RunTime:0.0060s ]
+SQL: SELECT `id` FROM `qp_menu` WHERE `menurl` = '/gamemanage/convertgoods' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_module` ORDER BY sortnum LIMIT 10   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_menu` LIMIT 50   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( state=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `tbl_convert_good` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: orderfile C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 155 行.
+NOTIC: [8] Undefined index: ordertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 158 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_convert_good` LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 162 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 163 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 168 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 168 行.
+SQL: SELECT `user_id`,`user_phone`,`convert_good_id`,`goods_name`,`goods_desc` FROM `tbl_convert_good` INNER JOIN tbl_goods ON tbl_convert_good.convert_good_id = tbl_goods.good_id  LIMIT 0,20   [ RunTime:0.0020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: actions C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 116 行.
+NOTIC: [8] Undefined variable: yday C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 159 行.
+NOTIC: [8] Undefined variable: tday C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 159 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 179 行.
+NOTIC: [8] Undefined index: data C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 189 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 179 行.
+NOTIC: [8] Undefined index: data C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 189 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 179 行.
+NOTIC: [8] Undefined index: data C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 189 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 179 行.
+NOTIC: [8] Undefined index: data C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 189 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 179 行.
+NOTIC: [8] Undefined index: data C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 189 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 179 行.
+NOTIC: [8] Undefined index: data C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 189 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 179 行.
+NOTIC: [8] Undefined index: data C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 189 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 179 行.
+NOTIC: [8] Undefined index: data C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 189 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 179 行.
+NOTIC: [8] Undefined index: data C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 189 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 179 行.
+NOTIC: [8] Undefined index: data C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 189 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 179 行.
+NOTIC: [8] Undefined index: data C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 189 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 179 行.
+NOTIC: [8] Undefined index: data C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 189 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 179 行.
+NOTIC: [8] Undefined index: data C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 189 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 179 行.
+NOTIC: [8] Undefined index: data C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 189 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 179 行.
+NOTIC: [8] Undefined index: data C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 189 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 179 行.
+NOTIC: [8] Undefined index: data C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 189 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 179 行.
+NOTIC: [8] Undefined index: data C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 189 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 179 行.
+NOTIC: [8] Undefined index: data C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 189 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 179 行.
+NOTIC: [8] Undefined index: data C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 189 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 179 行.
+NOTIC: [8] Undefined index: data C:\wamp\www\Runtime\Cache\qpht\a40d120f584aff36f41e5b900fe20441.php 第 189 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-06-05T19:55:55+08:00 ] ::1 /qpht.php/gamemanage/seachdata3
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant ORDER_LIST - assumed 'ORDER_LIST' C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 205 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 205 行.
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tbl_convert_good` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_convert_good` WHERE `user_phone` = '15978563254' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 162 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 168 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 168 行.
+SQL: SELECT `user_id`,`user_phone`,`convert_good_id`,`goods_name`,`goods_desc` FROM `tbl_convert_good` INNER JOIN tbl_goods ON tbl_convert_good.convert_good_id = tbl_goods.good_id  WHERE `user_phone` = '15978563254' LIMIT 0,20   [ RunTime:0.0010s ]
+
+[ 2018-06-05T19:56:09+08:00 ] ::1 /qpht.php/gamemanage/gamemanlist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `qp_role` [ RunTime:0.0060s ]
+SQL: SELECT `jurisdiction` FROM `qp_role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `qp_module` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `qp_menu` [ RunTime:0.0060s ]
+SQL: SELECT `id` FROM `qp_menu` WHERE `menurl` = '/gamemanage/gamemanlist' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_module` ORDER BY sortnum LIMIT 10   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_menu` LIMIT 50   [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( state=1 )  [ RunTime:0.0000s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0150s ]
+NOTIC: [8] Undefined index: playid C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 28 行.
+NOTIC: [8] Undefined index: playertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 31 行.
+NOTIC: [8] Undefined index: playertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 33 行.
+NOTIC: [8] Undefined index: bgtime C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 36 行.
+NOTIC: [8] Undefined index: nickname C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 39 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` LIMIT 1   [ RunTime:0.0090s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 44 行.
+NOTIC: [8] Undefined index: ordertype C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 48 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0320s ]
+SQL: SELECT user_id,count(if(room_id=1201,true,null)) AS r1,count(if(room_id=1202,true,null)) AS r2,count(if(room_id=1203,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28331,28330,28329,28328,28327,28326,28325,28324,28323,28322,28321,28320,28319,28318,28317,28316,28315,28314,28313,28312) GROUP BY user_id [ RunTime:0.0050s ]
+NOTIC: [8] Undefined offset: 28328 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28320 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28314 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined variable: yday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 45 行.
+NOTIC: [8] Undefined variable: tday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 46 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: actions C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 116 行.
+NOTIC: [8] Undefined variable: resdata C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 151 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\772a5fd4f656fe8dcafd9bf4c75d9ba2.php 第 303 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-06-05T19:56:19+08:00 ] ::1 /qpht.php/gamemanage/seachdata2
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: bgtime C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 134 行.
+NOTIC: [8] Undefined index: entime C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 135 行.
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `table_game_change_gold` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(user_id) AS tp_count FROM `table_game_change_gold` WHERE table_game_change_gold.user_id = '28331' LIMIT 1   [ RunTime:0.0030s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 127 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 132 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 132 行.
+SQL: SELECT * FROM `table_game_change_gold` WHERE table_game_change_gold.user_id = '28331' LIMIT 0,20   [ RunTime:0.0040s ]
+SQL: select nickname from tbl_playerinfo where userid=28331 [ RunTime:0.0010s ]
+
+[ 2018-06-05T19:57:02+08:00 ] ::1 /qpht.php/gamemanage/seachdata
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant ORDER_LIST - assumed 'ORDER_LIST' C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0070s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=2 )  [ RunTime:0.0020s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=2 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` LIMIT 1   [ RunTime:0.0040s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 44 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0220s ]
+SQL: SELECT user_id,count(if(room_id=1301,true,null)) AS r1,count(if(room_id=1302,true,null)) AS r2,count(if(room_id=1303,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28331,28330,28329,28328,28327,28326,28325,28324,28323,28322,28321,28320,28319,28318,28317,28316,28315,28314,28313,28312) GROUP BY user_id [ RunTime:0.0050s ]
+NOTIC: [8] Undefined offset: 28328 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28320 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28314 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+
+[ 2018-06-05T19:57:04+08:00 ] ::1 /qpht.php/gamemanage/seachdata
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant ORDER_LIST - assumed 'ORDER_LIST' C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0070s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=2 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=2 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0150s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` WHERE tbl_playerinfo.userid = '28331' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  WHERE tbl_playerinfo.userid = '28331' ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT user_id,count(if(room_id=1301,true,null)) AS r1,count(if(room_id=1302,true,null)) AS r2,count(if(room_id=1303,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28331) GROUP BY user_id [ RunTime:0.0040s ]
+
+[ 2018-06-05T19:57:07+08:00 ] ::1 /qpht.php/gamemanage/seachdata
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant ORDER_LIST - assumed 'ORDER_LIST' C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0070s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0260s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` LIMIT 1   [ RunTime:0.0040s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 44 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0230s ]
+SQL: SELECT user_id,count(if(room_id=1201,true,null)) AS r1,count(if(room_id=1202,true,null)) AS r2,count(if(room_id=1203,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28331,28330,28329,28328,28327,28326,28325,28324,28323,28322,28321,28320,28319,28318,28317,28316,28315,28314,28313,28312) GROUP BY user_id [ RunTime:0.0040s ]
+NOTIC: [8] Undefined offset: 28328 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28320 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28314 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+
+[ 2018-06-05T19:57:18+08:00 ] ::1 /qpht.php/gamemanage/seachdata
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant ORDER_LIST - assumed 'ORDER_LIST' C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0080s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` WHERE tbl_playerinfo.userid = '28331dssdf' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  WHERE tbl_playerinfo.userid = '28331dssdf' ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: SELECT user_id,count(if(room_id=1201,true,null)) AS r1,count(if(room_id=1202,true,null)) AS r2,count(if(room_id=1203,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28331) GROUP BY user_id [ RunTime:0.0030s ]
+
+[ 2018-06-05T19:57:28+08:00 ] ::1 /qpht.php/gamemanage/seachdata
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant ORDER_LIST - assumed 'ORDER_LIST' C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0080s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0190s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` WHERE tbl_playerinfo.userid = '4525sdsa' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  WHERE tbl_playerinfo.userid = '4525sdsa' ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0010s ]
+
+[ 2018-06-05T19:57:35+08:00 ] ::1 /qpht.php/gamemanage/seachdata
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant ORDER_LIST - assumed 'ORDER_LIST' C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0060s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=2 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` LIMIT 1   [ RunTime:0.0130s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 44 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0520s ]
+SQL: SELECT user_id,count(if(room_id=1301,true,null)) AS r1,count(if(room_id=1302,true,null)) AS r2,count(if(room_id=1303,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28331,28330,28329,28328,28327,28326,28325,28324,28323,28322,28321,28320,28319,28318,28317,28316,28315,28314,28313,28312) GROUP BY user_id [ RunTime:0.0040s ]
+NOTIC: [8] Undefined offset: 28328 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28320 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+NOTIC: [8] Undefined offset: 28314 C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 85 行.
+
+[ 2018-06-05T19:57:41+08:00 ] ::1 /qpht.php/gamemanage/seachdata
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant ORDER_LIST - assumed 'ORDER_LIST' C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0080s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=2 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0150s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` WHERE tbl_playerinfo.userid = '28331' LIMIT 1   [ RunTime:0.0020s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  WHERE tbl_playerinfo.userid = '28331' ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0020s ]
+SQL: SELECT user_id,count(if(room_id=1301,true,null)) AS r1,count(if(room_id=1302,true,null)) AS r2,count(if(room_id=1303,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28331) GROUP BY user_id [ RunTime:0.0030s ]
+
+[ 2018-06-05T19:57:45+08:00 ] ::1 /qpht.php/gamemanage/seachdata
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant ORDER_LIST - assumed 'ORDER_LIST' C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0070s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=2 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=2 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` WHERE tbl_playerinfo.userid = '28331dfs' LIMIT 1   [ RunTime:0.0010s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  WHERE tbl_playerinfo.userid = '28331dfs' ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0020s ]
+SQL: SELECT user_id,count(if(room_id=1301,true,null)) AS r1,count(if(room_id=1302,true,null)) AS r2,count(if(room_id=1303,true,null)) as r3 FROM `table_game_change_gold` where user_id in(28331) GROUP BY user_id [ RunTime:0.0070s ]
+
+[ 2018-06-05T19:57:50+08:00 ] ::1 /qpht.php/gamemanage/seachdata
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant ORDER_LIST - assumed 'ORDER_LIST' C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+NOTIC: [8] Undefined index:  C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 64 行.
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0090s ]
+SQL: SELECT `play_log` FROM `qp_gameinfo` WHERE ( id=2 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=2 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tbl_playerinfo` WHERE tbl_playerinfo.userid = '28331001' LIMIT 1   [ RunTime:0.0020s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 43 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 51 行.
+SQL: SELECT tbl_playerinfo.userid,`nickname`,`sex`,`gold`,tbl_account.create_time,`convert_tick`,`diamond`,`luck_tick`,`channel`,`login_time`,`ip`,`platform` FROM `tbl_playerinfo` INNER JOIN tbl_account ON tbl_playerinfo.userid = tbl_account.userid  WHERE tbl_playerinfo.userid = '28331001' ORDER BY tbl_playerinfo.create_time desc LIMIT 0,20   [ RunTime:0.0020s ]
+
+[ 2018-06-05T20:01:35+08:00 ] ::1 /qpht.php/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `qp_role` [ RunTime:0.0070s ]
+SQL: SELECT `jurisdiction` FROM `qp_role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `qp_module` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `qp_menu` [ RunTime:0.0070s ]
+SQL: SELECT `id` FROM `qp_menu` WHERE `menurl` = '/index/index' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_module` ORDER BY sortnum LIMIT 10   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_menu` LIMIT 50   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( state=1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `qp_gamemain` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( state=1 )  [ RunTime:0.0000s ]
+SQL: SELECT `countime` FROM `qp_gamemain` WHERE ( gameid=1 ) ORDER BY countime desc LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `jurisdiction` FROM `qp_role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `id` FROM `qp_menu` WHERE `menurl` = '/index/index' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_module` ORDER BY sortnum LIMIT 10   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_menu` LIMIT 50   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( state=1 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0020s ]
+SQL: SELECT `create_time`,count('userid') FROM `tbl_playerinfo` WHERE `create_time` BETWEEN '2018-06-04' AND '2018-06-05' GROUP BY DATE_FORMAT(create_time,'%Y-%m-%d')  [ RunTime:0.0110s ]
+SQL: SELECT `userid` FROM `tbl_playerinfo` WHERE DATE_FORMAT(create_time,'%Y-%m-%d') = '2018-06-04'  [ RunTime:0.0100s ]
+SQL: SHOW COLUMNS FROM `table_game_change_gold` [ RunTime:0.0120s ]
+SQL: SELECT DISTINCT user_id FROM `table_game_change_gold` WHERE DATE_FORMAT(change_time,'%Y-%m-%d') = '2018-06-04'  [ RunTime:0.0060s ]
+NOTIC: [8] Undefined index: 2018-06-03 C:\wamp\www\Application\qpht\Model\Game_change_goldModel.class.php 第 35 行.
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\Application\qpht\Model\Game_change_goldModel.class.php 第 37 行.
+SQL: SELECT count(DISTINCT user_id) FROM `table_game_change_gold` WHERE DATE_FORMAT(change_time,'%Y-%m-%d') = '2018-06-04'  [ RunTime:0.0050s ]
+SQL: select DATE_FORMAT(change_time,'%Y-%m-%d') days,count(user_id),count(DISTINCT user_id) from table_game_change_gold where user_id>0 and DATE_FORMAT(change_time,'%Y-%m-%d') ='2018-06-04' [ RunTime:0.0060s ]
+SQL: SELECT `countime` FROM `qp_gamemain` WHERE ( gameid=2 ) ORDER BY countime desc LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `jurisdiction` FROM `qp_role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT `id` FROM `qp_menu` WHERE `menurl` = '/index/index' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_module` ORDER BY sortnum LIMIT 10   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_menu` LIMIT 50   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( state=1 )  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=2 )  [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `tbl_playerinfo` [ RunTime:0.0050s ]
+SQL: SELECT `create_time`,count('userid') FROM `tbl_playerinfo` WHERE `create_time` BETWEEN '2018-06-04' AND '2018-06-05' GROUP BY DATE_FORMAT(create_time,'%Y-%m-%d')  [ RunTime:0.0070s ]
+SQL: SELECT `userid` FROM `tbl_playerinfo` WHERE DATE_FORMAT(create_time,'%Y-%m-%d') = '2018-06-04'  [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `table_game_change_gold` [ RunTime:0.0060s ]
+SQL: SELECT DISTINCT user_id FROM `table_game_change_gold` WHERE DATE_FORMAT(change_time,'%Y-%m-%d') = '2018-06-04'  [ RunTime:0.0050s ]
+NOTIC: [8] Undefined index: 2018-06-03 C:\wamp\www\Application\qpht\Model\Game_change_goldModel.class.php 第 35 行.
+NOTIC: [2] Invalid argument supplied for foreach() C:\wamp\www\Application\qpht\Model\Game_change_goldModel.class.php 第 37 行.
+SQL: SELECT count(DISTINCT user_id) FROM `table_game_change_gold` WHERE DATE_FORMAT(change_time,'%Y-%m-%d') = '2018-06-04'  [ RunTime:0.0050s ]
+SQL: select DATE_FORMAT(change_time,'%Y-%m-%d') days,count(user_id),count(DISTINCT user_id) from table_game_change_gold where user_id>0 and DATE_FORMAT(change_time,'%Y-%m-%d') ='2018-06-04' [ RunTime:0.0050s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( state=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_gamemain` WHERE ( gameid=1 ) ORDER BY countime desc LIMIT 0,7   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_gamemain` WHERE ( gameid=2 ) ORDER BY countime desc LIMIT 0,7   [ RunTime:0.0000s ]
+NOTIC: [2] Missing argument 1 for Think\Controller::show(), called in C:\wamp\www\Application\qpht\Controller\IndexController.class.php on line 27 and defined C:\wamp\www\ThinkPHP\Library\Think\Controller.class.php 第 68 行.
+NOTIC: [8] Undefined variable: content C:\wamp\www\ThinkPHP\Library\Think\Controller.class.php 第 69 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: actions C:\wamp\www\Runtime\Cache\qpht\d58da6f4db31771c17480fc019d566fe.php 第 116 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2018-06-05T20:16:19+08:00 ] ::1 /qpht.php/gamemanage/playsinfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `qp_role` [ RunTime:0.0060s ]
+SQL: SELECT `jurisdiction` FROM `qp_role` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `qp_module` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `qp_menu` [ RunTime:0.0060s ]
+SQL: SELECT `id` FROM `qp_menu` WHERE `menurl` = '/gamemanage/playsinfo' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_module` ORDER BY sortnum LIMIT 10   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `qp_menu` LIMIT 50   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( state=1 )  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `table_game_change_gold` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: playid C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 116 行.
+NOTIC: [8] Undefined index: bgtime C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 119 行.
+SQL: SELECT COUNT(user_id) AS tp_count FROM `table_game_change_gold` LIMIT 1   [ RunTime:0.0090s ]
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 123 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 124 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 128 行.
+NOTIC: [8] Use of undefined constant PAGE_NUM - assumed 'PAGE_NUM' C:\wamp\www\Application\qpht\Model\BaseplayinfoModel.class.php 第 128 行.
+SQL: SELECT * FROM `table_game_change_gold` LIMIT 0,20   [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=24046 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=24047 [ RunTime:0.0000s ]
+SQL: select nickname from tbl_playerinfo where userid=24050 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=72 [ RunTime:0.0020s ]
+SQL: select nickname from tbl_playerinfo where userid=24049 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=24044 [ RunTime:0.0000s ]
+SQL: select nickname from tbl_playerinfo where userid=24043 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=24052 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=24053 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=24054 [ RunTime:0.0020s ]
+SQL: select nickname from tbl_playerinfo where userid=24052 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=24055 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=66 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=24054 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=24052 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=24055 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=66 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=24063 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=24064 [ RunTime:0.0010s ]
+SQL: select nickname from tbl_playerinfo where userid=24065 [ RunTime:0.0010s ]
+SQL: SELECT `gamename` FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: yday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 126 行.
+NOTIC: [8] Undefined variable: tday C:\wamp\www\Application\qpht\Controller\GamemanageController.class.php 第 127 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: actions C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 116 行.
+NOTIC: [8] Undefined variable: userid C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 126 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+NOTIC: [8] Undefined variable: account C:\wamp\www\Runtime\Cache\qpht\2098111738d8e653122e41734fedfb9e.php 第 175 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-06-05T20:16:23+08:00 ] ::1 /qpht.php/gamemanage/getexcelplus?gameid=1&playid=&playertype=null&module=5&nickname=null&bgtime=null&entime=null&phone=null
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `qp_gameinfo` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `qp_gameinfo` WHERE ( id=1 )  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `table_game_change_gold` [ RunTime:0.0200s ]
+NOTIC: [8] Undefined variable: map C:\wamp\www\Application\qpht\Model\Game_change_goldModel.class.php 第 88 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `table_game_change_gold` LIMIT 1   [ RunTime:0.0040s ]
+NOTIC: [8] Undefined variable: map C:\wamp\www\Application\qpht\Model\Game_change_goldModel.class.php 第 98 行.
+SQL: SELECT `user_id`,`change_gold`,`room_id`,`change_time`,`in_gold` FROM `table_game_change_gold` LIMIT 0,1000   [ RunTime:0.0060s ]
+NOTIC: [8] Undefined variable: map C:\wamp\www\Application\qpht\Model\Game_change_goldModel.class.php 第 98 行.
+SQL: SELECT `user_id`,`change_gold`,`room_id`,`change_time`,`in_gold` FROM `table_game_change_gold` LIMIT 1000,1000   [ RunTime:0.0080s ]
+NOTIC: [8] ob_end_clean(): failed to delete buffer. No buffer to delete C:\wamp\www\Application\qpht\Common\function.php 第 66 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at C:\wamp\www\Application\qpht\Common\function.php:83) C:\wamp\www\Application\qpht\Common\function.php 第 68 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at C:\wamp\www\Application\qpht\Common\function.php:83) C:\wamp\www\Application\qpht\Common\function.php 第 69 行.
+NOTIC: [8] Undefined variable: map C:\wamp\www\Application\qpht\Model\Game_change_goldModel.class.php 第 98 行.
+SQL: SELECT `user_id`,`change_gold`,`room_id`,`change_time`,`in_gold` FROM `table_game_change_gold` LIMIT 2000,1000   [ RunTime:0.0070s ]
+NOTIC: [8] ob_end_clean(): failed to delete buffer. No buffer to delete C:\wamp\www\Application\qpht\Common\function.php 第 66 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at C:\wamp\www\Application\qpht\Common\function.php:83) C:\wamp\www\Application\qpht\Common\function.php 第 68 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at C:\wamp\www\Application\qpht\Common\function.php:83) C:\wamp\www\Application\qpht\Common\function.php 第 69 行.
+NOTIC: [8] Undefined variable: map C:\wamp\www\Application\qpht\Model\Game_change_goldModel.class.php 第 98 行.
+SQL: SELECT `user_id`,`change_gold`,`room_id`,`change_time`,`in_gold` FROM `table_game_change_gold` LIMIT 3000,1000   [ RunTime:0.0080s ]
+NOTIC: [8] ob_end_clean(): failed to delete buffer. No buffer to delete C:\wamp\www\Application\qpht\Common\function.php 第 66 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at C:\wamp\www\Application\qpht\Common\function.php:83) C:\wamp\www\Application\qpht\Common\function.php 第 68 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at C:\wamp\www\Application\qpht\Common\function.php:83) C:\wamp\www\Application\qpht\Common\function.php 第 69 行.
+NOTIC: [8] Undefined variable: map C:\wamp\www\Application\qpht\Model\Game_change_goldModel.class.php 第 98 行.
+SQL: SELECT `user_id`,`change_gold`,`room_id`,`change_time`,`in_gold` FROM `table_game_change_gold` LIMIT 4000,1000   [ RunTime:0.0070s ]
+NOTIC: [8] ob_end_clean(): failed to delete buffer. No buffer to delete C:\wamp\www\Application\qpht\Common\function.php 第 66 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at C:\wamp\www\Application\qpht\Common\function.php:83) C:\wamp\www\Application\qpht\Common\function.php 第 68 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at C:\wamp\www\Application\qpht\Common\function.php:83) C:\wamp\www\Application\qpht\Common\function.php 第 69 行.
+NOTIC: [8] Undefined variable: map C:\wamp\www\Application\qpht\Model\Game_change_goldModel.class.php 第 98 行.
+SQL: SELECT `user_id`,`change_gold`,`room_id`,`change_time`,`in_gold` FROM `table_game_change_gold` LIMIT 5000,1000   [ RunTime:0.0080s ]
+NOTIC: [8] ob_end_clean(): failed to delete buffer. No buffer to delete C:\wamp\www\Application\qpht\Common\function.php 第 66 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at C:\wamp\www\Application\qpht\Common\function.php:83) C:\wamp\www\Application\qpht\Common\function.php 第 68 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at C:\wamp\www\Application\qpht\Common\function.php:83) C:\wamp\www\Application\qpht\Common\function.php 第 69 行.
+NOTIC: [8] Undefined variable: map C:\wamp\www\Application\qpht\Model\Game_change_goldModel.class.php 第 98 行.
+SQL: SELECT `user_id`,`change_gold`,`room_id`,`change_time`,`in_gold` FROM `table_game_change_gold` LIMIT 6000,1000   [ RunTime:0.0090s ]
+NOTIC: [8] ob_end_clean(): failed to delete buffer. No buffer to delete C:\wamp\www\Application\qpht\Common\function.php 第 66 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at C:\wamp\www\Application\qpht\Common\function.php:83) C:\wamp\www\Application\qpht\Common\function.php 第 68 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at C:\wamp\www\Application\qpht\Common\function.php:83) C:\wamp\www\Application\qpht\Common\function.php 第 69 行.
+NOTIC: [8] Undefined variable: map C:\wamp\www\Application\qpht\Model\Game_change_goldModel.class.php 第 98 行.
+SQL: SELECT `user_id`,`change_gold`,`room_id`,`change_time`,`in_gold` FROM `table_game_change_gold` LIMIT 7000,1000   [ RunTime:0.0100s ]
+NOTIC: [8] ob_end_clean(): failed to delete buffer. No buffer to delete C:\wamp\www\Application\qpht\Common\function.php 第 66 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at C:\wamp\www\Application\qpht\Common\function.php:83) C:\wamp\www\Application\qpht\Common\function.php 第 68 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at C:\wamp\www\Application\qpht\Common\function.php:83) C:\wamp\www\Application\qpht\Common\function.php 第 69 行.
+NOTIC: [8] Undefined variable: map C:\wamp\www\Application\qpht\Model\Game_change_goldModel.class.php 第 98 行.
+SQL: SELECT `user_id`,`change_gold`,`room_id`,`change_time`,`in_gold` FROM `table_game_change_gold` LIMIT 8000,1000   [ RunTime:0.0070s ]
+NOTIC: [8] ob_end_clean(): failed to delete buffer. No buffer to delete C:\wamp\www\Application\qpht\Common\function.php 第 66 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at C:\wamp\www\Application\qpht\Common\function.php:83) C:\wamp\www\Application\qpht\Common\function.php 第 68 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at C:\wamp\www\Application\qpht\Common\function.php:83) C:\wamp\www\Application\qpht\Common\function.php 第 69 行.
+
